@@ -8,7 +8,9 @@ Arduino_GLCD::Arduino_GLCD(uint8_t CS, uint8_t RS, uint8_t RST)
 void Arduino_GLCD::begin() {
   initR(INITR_REDTAB);
 }
-    
+
+
+
 void Arduino_GLCD::background(uint8_t gray) {
   background(gray, gray, gray);
 }
@@ -19,6 +21,18 @@ void Arduino_GLCD::background(uint8_t red, uint8_t green, uint8_t blue) {
 
 void Arduino_GLCD::background(color c) {
   fillScreen(c);
+}
+
+void Arduino_GLCD::stroke(uint8_t gray) {
+  stroke(gray, gray, gray);
+}
+
+void Arduino_GLCD::stroke(uint8_t red, uint8_t green, uint8_t blue) {
+  stroke(newColor(red, green, blue));
+}
+
+void Arduino_GLCD::stroke(color c) {
+  strokeColor = c;
 }
 
 color newColor(uint8_t r, uint8_t g, uint8_t b) {

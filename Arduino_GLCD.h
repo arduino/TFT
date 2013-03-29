@@ -63,7 +63,7 @@ public:
   void popStyle();
   
 private:
-  
+  color strokeColor;
 
 };
 
