@@ -18,9 +18,9 @@
 
 //#define sclk 13
 //#define mosi 11
-#define cs   10
-#define dc   9
-#define rst  8  // you can also connect this to the Arduino reset
+#define cs   7
+#define dc   0
+#define rst  1  // you can also connect this to the Arduino reset
 
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library
@@ -33,14 +33,27 @@
 // (for UNO thats sclk = 13 and sid = 11) and pin 10 must be
 // an output. This is much faster - also required if you want
 // to use the microSD card (see the image drawing example)
-Arduino_GLCD tft = Arduino_GLCD(cs, dc, rst);
+Adafruit_ST7735 tft = Adafruit_ST7735(cs, dc, rst);
 float p = 3.1415926;
 
 void setup(void) {
   Serial.begin(9600);
   Serial.print("hello!");
 
-  tft.begin();
+  // Our supplier changed the 1.8" display slightly after Jan 10, 2012
+  // so that the alignment of the TFT had to be shifted by a few pixels
+  // this just means the init code is slightly different. Check the
+  // color of the tab to see which init code to try. If the display is
+  // cut off or has extra 'random' pixels on the top & left, try the
+  // other option!
+  // If you are seeing red and green color inversion, use Black Tab
+
+  // If your TFT's plastic wrap has a Black Tab, use the following:
+  tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
+  // If your TFT's plastic wrap has a Red Tab, use the following:
+  //tft.initR(INITR_REDTAB);   // initialize a ST7735R chip, red tab
+  // If your TFT's plastic wrap has a Green Tab, use the following:
+  //tft.initR(INITR_GREENTAB); // initialize a ST7735R chip, green tab
 
   Serial.println("init");
 
