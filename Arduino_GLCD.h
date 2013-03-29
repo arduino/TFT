@@ -23,12 +23,10 @@ public:
   
   // http://processing.org/reference/background_.html
   void background(uint8_t red, uint8_t green, uint8_t blue);
-  void background(uint8_t gray);
   void background(color c);
 
   // http://processing.org/reference/fill_.html
   void fill(uint8_t red, uint8_t green, uint8_t blue);
-  void fill(uint8_t gray);
   void fill(color c);
 
   // http://processing.org/reference/noFill_.html
@@ -36,7 +34,6 @@ public:
 
   // http://processing.org/reference/stroke_.html
   void stroke(uint8_t red, uint8_t green, uint8_t blue);
-  void stroke(uint8_t gray);
   void stroke(color c);
 
   // http://processing.org/reference/noStroke_.html

@@ -46,15 +46,10 @@ void setup(void) {
   Serial.println("init");
 
   uint16_t time = millis();
-  // clear the screen with a solid gray background.
-  // note: for numbers from 128 to 255, put an "U" in front of the number
-  uint8_t gray = 128U;
-  tft.background(gray);
-  time = millis() - time;
-
-  delay(500);
   // clear the screen with an orange background
   tft.background(255, 128, 0);
+  time = millis() - time;
+
   delay(500);
   
   // clear the screen with a cyan background (using the "color" type);

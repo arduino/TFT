@@ -11,20 +11,12 @@ void Arduino_GLCD::begin() {
 
 
 
-void Arduino_GLCD::background(uint8_t gray) {
-  background(gray, gray, gray);
-}
-
 void Arduino_GLCD::background(uint8_t red, uint8_t green, uint8_t blue) {
   background(newColor(red, green, blue));
 }
 
 void Arduino_GLCD::background(color c) {
   fillScreen(c);
-}
-
-void Arduino_GLCD::stroke(uint8_t gray) {
-  stroke(gray, gray, gray);
 }
 
 void Arduino_GLCD::stroke(uint8_t red, uint8_t green, uint8_t blue) {
