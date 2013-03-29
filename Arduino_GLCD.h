@@ -42,6 +42,8 @@ public:
   // http://processing.org/reference/noStroke_.html
   void noStroke();
   
+  void text    (const char * text, uint16_t x, uint16_t y);
+  void textWrap(const char * text, uint16_t x, uint16_t y);
   // similar to ellipse() in Processing, but with
   // a single radius.
   // http://processing.org/reference/ellipse_.html

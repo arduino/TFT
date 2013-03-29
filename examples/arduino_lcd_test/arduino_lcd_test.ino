@@ -61,8 +61,6 @@ void setup(void) {
   color c = newColor(0, 255, 255);
   tft.background(c);
   delay(500);
-  
-  
 
   Serial.println(time, DEC);
   delay(500);
@@ -153,11 +151,9 @@ void testlines(uint16_t color) {
   }
 }
 
-void testdrawtext(char *text, uint16_t color) {
-  tft.setCursor(0, 0);
-  tft.setTextColor(color);
-  tft.setTextWrap(true);
-  tft.print(text);
+void testdrawtext(char *text, color color) {
+  tft.stroke(color);
+  tft.textWrap(text, 0, 0);
 }
 
 void testfastlines(uint16_t color1, uint16_t color2) {
