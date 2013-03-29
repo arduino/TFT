@@ -13,6 +13,8 @@ enum RectMode {
   CENTER
 };
 
+typedef uint16_t color;
+
 class Arduino_GLCD : public Adafruit_ST7735 {
 public:
   Arduino_GLCD(uint8_t CS, uint8_t RS, uint8_t RST);
@@ -22,12 +24,12 @@ public:
   // http://processing.org/reference/background_.html
   void background(uint8_t red, uint8_t green, uint8_t blue);
   void background(uint8_t gray);
-  void background(uint16_t color565);
+  void background(color c);
 
   // http://processing.org/reference/fill_.html
   void fill(uint8_t red, uint8_t green, uint8_t blue);
   void fill(uint8_t gray);
-  void fill(uint16_t color565);
+  void fill(color c);
 
   // http://processing.org/reference/noFill_.html
   void noFill();
@@ -35,12 +37,10 @@ public:
   // http://processing.org/reference/stroke_.html
   void stroke(uint8_t red, uint8_t green, uint8_t blue);
   void stroke(uint8_t gray);
-  void stroke(uint16_t color565);
+  void stroke(color c);
 
   // http://processing.org/reference/noStroke_.html
   void noStroke();
-  
-  static uint16_t toColor565(uint8_t r, uint8_t g, uint8_t b);
   
   // similar to ellipse() in Processing, but with
   // a single radius.
@@ -66,5 +66,8 @@ private:
   
 
 };
+
+color newColor(uint8_t red, uint8_t green, uint8_t blue);
+
 
 #endif // _ARDUINO_GLCD_H

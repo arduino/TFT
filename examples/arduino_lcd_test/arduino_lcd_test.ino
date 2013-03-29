@@ -56,9 +56,13 @@ void setup(void) {
   // clear the screen with an orange background
   tft.background(255, 128, 0);
   delay(500);
-  // clear the screen with a dark red background ("compact-color" version);
-  uint16_t darkRed = 0x8000;
-  tft.background(darkRed);
+  
+  // clear the screen with a cyan background (using the "color" type);
+  color c = newColor(0, 255, 255);
+  tft.background(c);
+  delay(500);
+  
+  
 
   Serial.println(time, DEC);
   delay(500);
