@@ -252,25 +252,24 @@ void tftPrintTest() {
   tft.print(1234.567);
 
   delay(1500);
-  tft.setCursor(0, 0);
-  tft.fillScreen(ST7735_BLACK);
-  tft.setTextColor(ST7735_WHITE);
-  tft.setTextSize(0);
-  tft.println("Hello World!");
-  tft.setTextSize(1);
-  tft.setTextColor(ST7735_GREEN);
+  tft.background(0); // black
+  tft.stroke(255, 255, 255); // white
+  tft.textSize(0);
+  tft.text("Hello World!\n", 0, 0);
+  tft.textSize(1);
+  tft.stroke(0, 255, 0); // green
   tft.print(p, 6);
   tft.println(" Want pi?");
   tft.println(" ");
   tft.print(8675309, HEX); // print 8,675,309 out in HEX!
   tft.println(" Print HEX!");
   tft.println(" ");
-  tft.setTextColor(ST7735_WHITE);
+  tft.stroke(255, 255, 255); // white
   tft.println("Sketch has been");
   tft.println("running for: ");
-  tft.setTextColor(ST7735_MAGENTA);
+  tft.stroke(255, 0, 255);  // magenta
   tft.print(millis() / 1000);
-  tft.setTextColor(ST7735_WHITE);
+  tft.stroke(255, 255, 255);
   tft.print(" seconds.");
 }
 
