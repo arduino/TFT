@@ -30,14 +30,14 @@ void Arduino_GLCD::stroke(color c) {
 }
 
 
-void Arduino_GLCD::text(const char * text, uint16_t x, uint16_t y) {
+void Arduino_GLCD::text(const char * text, int16_t x, int16_t y) {
   setTextWrap(false);
   setTextColor(strokeColor);
   setCursor(x, y);
   print(text);
 }
 
-void Arduino_GLCD::textWrap(const char * text, uint16_t x, uint16_t y) {
+void Arduino_GLCD::textWrap(const char * text, int16_t x, int16_t y) {
   setTextWrap(true);
   setTextColor(strokeColor);
   setCursor(x, y);

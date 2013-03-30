@@ -39,8 +39,8 @@ public:
   // http://processing.org/reference/noStroke_.html
   void noStroke();
   
-  void text    (const char * text, uint16_t x, uint16_t y);
-  void textWrap(const char * text, uint16_t x, uint16_t y);
+  void text    (const char * text, int16_t x, int16_t y);
+  void textWrap(const char * text, int16_t x, int16_t y);
 
   void textSize(uint8_t size);
   
@@ -51,13 +51,13 @@ public:
   
   void point(int16_t x, int16_t y);
   
-  void line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
+  void line(int16_t x1, int16_t y1, int16_t x2, int16_t y2);
   
-  void quad(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint16_t x4, uint16_t y4);
+  void quad(int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3, int16_t x4, int16_t y4);
   
-  void rect(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint16_t radius = 0);
+  void rect(int16_t x, int16_t y, int16_t width, int16_t height, int16_t radius = 0);
   
-  void triangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3);
+  void triangle(int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3);
   
   void rectMode(RectMode mode);
   
