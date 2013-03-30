@@ -44,6 +44,10 @@ void Arduino_GLCD::textWrap(const char * text, uint16_t x, uint16_t y) {
 }
 
 
+void Arduino_GLCD::textSize(uint8_t size) {
+  setTextSize(size);
+}
+
 
 color newColor(uint8_t r, uint8_t g, uint8_t b) {
   return ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3);

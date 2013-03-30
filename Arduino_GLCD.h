@@ -41,6 +41,9 @@ public:
   
   void text    (const char * text, uint16_t x, uint16_t y);
   void textWrap(const char * text, uint16_t x, uint16_t y);
+
+  void textSize(uint8_t size);
+  
   // similar to ellipse() in Processing, but with
   // a single radius.
   // http://processing.org/reference/ellipse_.html
