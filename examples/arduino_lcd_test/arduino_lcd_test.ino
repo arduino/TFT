@@ -232,21 +232,25 @@ void testroundrects() {
 }
 
 void tftPrintTest() {
-  tft.setTextWrap(false);
-  tft.fillScreen(ST7735_BLACK);
-  tft.setCursor(0, 30);
-  tft.setTextColor(ST7735_RED);
-  tft.setTextSize(1);
+  tft.background(0);
+  tft.stroke(255, 0, 0); // red
+  tft.textSize(1);
+  tft.text("Hello World!\n", 0, 30); // the ending \n will put 
+                                     // the cursor below the line
+
+  tft.stroke(255, 255, 0); // yellow
+  tft.textSize(2);
+  // note: you can freely use text() and print()/println()
   tft.println("Hello World!");
-  tft.setTextColor(ST7735_YELLOW);
-  tft.setTextSize(2);
+  
+  tft.stroke(0, 255, 0); // green
+  tft.textSize(3);
   tft.println("Hello World!");
-  tft.setTextColor(ST7735_GREEN);
-  tft.setTextSize(3);
-  tft.println("Hello World!");
-  tft.setTextColor(ST7735_BLUE);
-  tft.setTextSize(4);
+  
+  tft.stroke(0, 0, 255); // blue
+  tft.textSize(4);
   tft.print(1234.567);
+
   delay(1500);
   tft.setCursor(0, 0);
   tft.fillScreen(ST7735_BLACK);
