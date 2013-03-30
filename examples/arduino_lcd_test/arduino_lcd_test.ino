@@ -70,7 +70,8 @@ void setup(void) {
   delay(4000);
 
   // a single pixel
-  tft.drawPixel(tft.width()/2, tft.height()/2, ST7735_GREEN);
+  tft.stroke(0, 255, 0);
+  tft.point(tft.width()/2, tft.height()/2);
   delay(500);
 
   // line draw test
