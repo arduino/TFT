@@ -25,6 +25,7 @@ void Arduino_GLCD::stroke(uint8_t red, uint8_t green, uint8_t blue) {
 
 void Arduino_GLCD::stroke(color c) {
   strokeColor = c;
+  setTextColor(c);
 }
 
 
