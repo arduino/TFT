@@ -119,6 +119,19 @@ void Arduino_GLCD::rect(int16_t x, int16_t y, int16_t width, int16_t height, int
     drawRoundRect(x, y, width, height, radius, strokeColor);
   }
 }
+
+void Arduino_GLCD::circle(int16_t x, int16_t y, int16_t r) {
+  if (r == 0)
+    return;
+  
+  if (useFill) {
+    fillCircle(x, y, r, fillColor);
+  }
+  if (useStroke) {
+    drawCircle(x, y, r, strokeColor);
+  }
+}
+
 color newColor(uint8_t r, uint8_t g, uint8_t b) {
   return ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3);
 }

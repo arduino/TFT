@@ -88,9 +88,9 @@ void setup(void) {
   testfillrects(newColor(255, 255, 0), newColor(255, 0, 255));
   delay(500);
 
-  tft.fillScreen(ST7735_BLACK);
-  testfillcircles(10, ST7735_BLUE);
-  testdrawcircles(10, ST7735_WHITE);
+  tft.background(0);
+  testfillcircles(10, newColor(0, 0, 255));
+  testdrawcircles(10, newColor(255, 255, 255));
   delay(500);
 
   testroundrects();
@@ -182,18 +182,22 @@ void testfillrects(color color1, color color2) {
   }
 }
 
-void testfillcircles(uint8_t radius, uint16_t color) {
+void testfillcircles(uint8_t radius, color color) {
+  tft.noStroke();
+  tft.fill(color);
   for (int16_t x=radius; x < tft.width(); x+=radius*2) {
     for (int16_t y=radius; y < tft.height(); y+=radius*2) {
-      tft.fillCircle(x, y, radius, color);
+      tft.circle(x, y, radius);
     }
   }
 }
 
-void testdrawcircles(uint8_t radius, uint16_t color) {
+void testdrawcircles(uint8_t radius, color color) {
+  tft.stroke(color);
+  tft.noFill();
   for (int16_t x=0; x < tft.width()+radius; x+=radius*2) {
     for (int16_t y=0; y < tft.height()+radius; y+=radius*2) {
-      tft.drawCircle(x, y, radius, color);
+      tft.circle(x, y, radius);
     }
   }
 }
