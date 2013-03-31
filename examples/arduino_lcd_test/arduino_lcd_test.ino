@@ -288,21 +288,29 @@ void tftPrintTest() {
 
 void mediabuttons() {
   // play
-  tft.fillScreen(ST7735_BLACK);
-  tft.fillRoundRect(25, 10, 78, 60, 8, ST7735_WHITE);
-  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST7735_RED);
+  tft.background(0);
+  tft.noStroke();
+  tft.fill(255, 255, 255);
+  tft.rect(1, 34, 78, 60, 8);
+  tft.fill(255, 0, 0);
+  tft.triangle(16, 44, 16, 84, 65, 64);
   delay(500);
   // pause
-  tft.fillRoundRect(25, 90, 78, 60, 8, ST7735_WHITE);
-  tft.fillRoundRect(39, 98, 20, 45, 5, ST7735_GREEN);
-  tft.fillRoundRect(69, 98, 20, 45, 5, ST7735_GREEN);
+  tft.fill(255, 255, 255);
+  tft.rect(81, 34, 78, 60, 8);
+  tft.fill(0, 255, 0);
+  tft.rect(95, 42, 20, 45, 5);
+  tft.rect(125, 42, 20, 45, 5);
   delay(500);
   // play color
-  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST7735_BLUE);
+  tft.fill(0, 0, 255);
+  tft.triangle(16, 44, 16, 84, 65, 64);
   delay(50);
   // pause color
-  tft.fillRoundRect(39, 98, 20, 45, 5, ST7735_RED);
-  tft.fillRoundRect(69, 98, 20, 45, 5, ST7735_RED);
+  tft.fill(255, 0, 0);
+  tft.rect(95, 42, 20, 45, 5);
+  tft.rect(125, 42, 20, 45, 5);
   // play color
-  tft.fillTriangle(42, 20, 42, 60, 90, 40, ST7735_GREEN);
+  tft.fill(0, 255, 0);
+  tft.triangle(16, 44, 16, 84, 65, 64);
 }
