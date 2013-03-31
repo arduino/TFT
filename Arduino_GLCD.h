@@ -66,6 +66,7 @@ public:
   
 private:
   color strokeColor;
+  bool useStroke;
 
 };
 

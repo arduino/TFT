@@ -3,6 +3,8 @@
 Arduino_GLCD::Arduino_GLCD(uint8_t CS, uint8_t RS, uint8_t RST) 
   : Adafruit_ST7735(CS, RS, RST)
 {
+  strokeColor = 0;
+  useStroke = true;
 }
 
 void Arduino_GLCD::begin() {
@@ -25,12 +27,19 @@ void Arduino_GLCD::stroke(uint8_t red, uint8_t green, uint8_t blue) {
 }
 
 void Arduino_GLCD::stroke(color c) {
+  useStroke = true;
   strokeColor = c;
   setTextColor(c);
 }
 
+void Arduino_GLCD::noStroke() {
+  useStroke = false;
+}
 
 void Arduino_GLCD::text(const char * text, int16_t x, int16_t y) {
+  if (!useStroke)
+    return;
+  
   setTextWrap(false);
   setTextColor(strokeColor);
   setCursor(x, y);
@@ -38,6 +47,9 @@ void Arduino_GLCD::text(const char * text, int16_t x, int16_t y) {
 }
 
 void Arduino_GLCD::textWrap(const char * text, int16_t x, int16_t y) {
+  if (!useStroke)
+    return;
+  
   setTextWrap(true);
   setTextColor(strokeColor);
   setCursor(x, y);
@@ -50,10 +62,16 @@ void Arduino_GLCD::textSize(uint8_t size) {
 }
 
 void Arduino_GLCD::point(int16_t x, int16_t y) {
+  if (!useStroke)
+    return;
+  
   drawPixel(x, y, strokeColor);
 }
 
 void Arduino_GLCD::line(int16_t x1, int16_t y1, int16_t x2, int16_t y2) {
+  if (!useStroke)
+    return;
+  
   if (x1 == x2) {
     drawFastVLine(x1, y1, y2 - y1, strokeColor);
   }
