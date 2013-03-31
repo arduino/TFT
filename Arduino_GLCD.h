@@ -67,6 +67,8 @@ public:
 private:
   color strokeColor;
   bool useStroke;
+  color fillColor;
+  bool useFill;
 
 };
 

@@ -5,6 +5,8 @@ Arduino_GLCD::Arduino_GLCD(uint8_t CS, uint8_t RS, uint8_t RST)
 {
   strokeColor = 0;
   useStroke = true;
+  fillColor = 0;
+  useFill = false;
 }
 
 void Arduino_GLCD::begin() {
@@ -35,6 +37,20 @@ void Arduino_GLCD::stroke(color c) {
 void Arduino_GLCD::noStroke() {
   useStroke = false;
 }
+
+void Arduino_GLCD::noFill() {
+  useFill = false;
+}
+
+void Arduino_GLCD::fill(uint8_t red, uint8_t green, uint8_t blue) {
+  fill(newColor(red, green, blue));
+}
+
+void Arduino_GLCD::fill(color c) {
+  useFill = true;
+  fillColor = c;
+}
+
 
 void Arduino_GLCD::text(const char * text, int16_t x, int16_t y) {
   if (!useStroke)
