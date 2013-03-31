@@ -82,10 +82,10 @@ void setup(void) {
   testfastlines(newColor(255, 0, 0), newColor(0, 0, 255));
   delay(500);
 
-  testdrawrects(ST7735_GREEN);
+  testdrawrects(newColor(0, 255, 0));
   delay(500);
 
-  testfillrects(ST7735_YELLOW, ST7735_MAGENTA);
+  testfillrects(newColor(255, 255, 0), newColor(255, 0, 255));
   delay(500);
 
   tft.fillScreen(ST7735_BLACK);
@@ -165,18 +165,20 @@ void testfastlines(color color1, color color2) {
   }
 }
 
-void testdrawrects(uint16_t color) {
-  tft.fillScreen(ST7735_BLACK);
-  for (int16_t x=0; x < tft.width(); x+=6) {
-    tft.drawRect(tft.width()/2 -x/2, tft.height()/2 -x/2 , x, x, color);
+void testdrawrects(color color) {
+  tft.background(0);
+  tft.stroke(color);
+  for (int16_t y=0; y < tft.height(); y+=6) {
+    tft.rect(tft.width()/2 -y/2, tft.height()/2 -y/2 , y, y);
   }
 }
 
-void testfillrects(uint16_t color1, uint16_t color2) {
-  tft.fillScreen(ST7735_BLACK);
-  for (int16_t x=tft.width()-1; x > 6; x-=6) {
-    tft.fillRect(tft.width()/2 -x/2, tft.height()/2 -x/2 , x, x, color1);
-    tft.drawRect(tft.width()/2 -x/2, tft.height()/2 -x/2 , x, x, color2);
+void testfillrects(color color1, color color2) {
+  tft.background(0);
+  tft.fill(color1);
+  tft.stroke(color2);
+  for (int16_t y=tft.height()-1; y > 6; y-=6) {
+    tft.rect(tft.width()/2 -y/2, tft.height()/2 -y/2 , y, y);
   }
 }
 

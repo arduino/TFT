@@ -55,7 +55,9 @@ public:
   
   void quad(int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3, int16_t x4, int16_t y4);
   
-  void rect(int16_t x, int16_t y, int16_t width, int16_t height, int16_t radius = 0);
+  void rect(int16_t x, int16_t y, int16_t width, int16_t height);
+
+  void rect(int16_t x, int16_t y, int16_t width, int16_t height, int16_t radius);
   
   void triangle(int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3);
   
