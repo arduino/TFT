@@ -53,6 +53,10 @@ void Arduino_GLCD::point(int16_t x, int16_t y) {
   drawPixel(x, y, strokeColor);
 }
 
+void Arduino_GLCD::line(int16_t x1, int16_t y1, int16_t x2, int16_t y2) {
+  drawLine(x1, y1, x2, y2, strokeColor);
+}
+
 color newColor(uint8_t r, uint8_t g, uint8_t b) {
   return ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3);
 }

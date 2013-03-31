@@ -75,7 +75,7 @@ void setup(void) {
   delay(500);
 
   // line draw test
-  testlines(ST7735_YELLOW);
+  testlines(newColor(255, 255, 0)); // yellow
   delay(500);
 
   // optimized lines
@@ -113,37 +113,38 @@ void loop() {
   delay(500);
 }
 
-void testlines(uint16_t color) {
-  tft.fillScreen(ST7735_BLACK);
+void testlines(color color) {
+  tft.background(0);
+  tft.stroke(color);
   for (int16_t x=0; x < tft.width(); x+=6) {
-    tft.drawLine(0, 0, x, tft.height()-1, color);
+    tft.line(0, 0, x, tft.height()-1);
   }
   for (int16_t y=0; y < tft.height(); y+=6) {
-    tft.drawLine(0, 0, tft.width()-1, y, color);
+    tft.line(0, 0, tft.width()-1, y);
   }
 
-  tft.fillScreen(ST7735_BLACK);
+  tft.background(0);
   for (int16_t x=0; x < tft.width(); x+=6) {
-    tft.drawLine(tft.width()-1, 0, x, tft.height()-1, color);
+    tft.line(tft.width()-1, 0, x, tft.height()-1);
   }
   for (int16_t y=0; y < tft.height(); y+=6) {
-    tft.drawLine(tft.width()-1, 0, 0, y, color);
+    tft.line(tft.width()-1, 0, 0, y);
   }
 
-  tft.fillScreen(ST7735_BLACK);
+  tft.background(0);
   for (int16_t x=0; x < tft.width(); x+=6) {
-    tft.drawLine(0, tft.height()-1, x, 0, color);
+    tft.line(0, tft.height()-1, x, 0);
   }
   for (int16_t y=0; y < tft.height(); y+=6) {
-    tft.drawLine(0, tft.height()-1, tft.width()-1, y, color);
+    tft.line(0, tft.height()-1, tft.width()-1, y);
   }
 
-  tft.fillScreen(ST7735_BLACK);
+  tft.fillScreen(0);
   for (int16_t x=0; x < tft.width(); x+=6) {
-    tft.drawLine(tft.width()-1, tft.height()-1, x, 0, color);
+    tft.line(tft.width()-1, tft.height()-1, x, 0);
   }
   for (int16_t y=0; y < tft.height(); y+=6) {
-    tft.drawLine(tft.width()-1, tft.height()-1, 0, y, color);
+    tft.line(tft.width()-1, tft.height()-1, 0, y);
   }
 }
 
