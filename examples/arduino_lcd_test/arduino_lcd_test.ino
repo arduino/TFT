@@ -220,17 +220,19 @@ void testtriangles() {
 }
 
 void testroundrects() {
-  tft.fillScreen(ST7735_BLACK);
+  tft.background(0);
+  tft.noFill();
   int color = 100;
   int i;
   int t;
   for(t = 0 ; t <= 4; t+=1) {
     int x = 0;
     int y = 0;
-    int w = 127;
-    int h = 159;
-    for(i = 0 ; i <= 24; i+=1) {
-      tft.drawRoundRect(x, y, w, h, 5, color);
+    int w = 159;
+    int h = 127;
+    for(i = 0 ; i <= 19; i+=1) {
+      tft.stroke(color);
+      tft.rect(x, y, w, h, 5);
       x+=2;
       y+=3;
       w-=4;
