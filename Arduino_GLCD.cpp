@@ -132,6 +132,15 @@ void Arduino_GLCD::circle(int16_t x, int16_t y, int16_t r) {
   }
 }
 
+void Arduino_GLCD::triangle(int16_t x1, int16_t y1, int16_t x2, int16_t y2, int16_t x3, int16_t y3) {
+  if (useFill) {
+    fillTriangle(x1, y1, x2, y2, x3, y3, fillColor);
+  }
+  if (useStroke) {
+    drawTriangle(x1, y1, x2, y2, x3, y3, strokeColor);
+  }
+}
+
 color newColor(uint8_t r, uint8_t g, uint8_t b) {
   return ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | (b >> 3);
 }

@@ -203,18 +203,19 @@ void testdrawcircles(uint8_t radius, color color) {
 }
 
 void testtriangles() {
-  tft.fillScreen(ST7735_BLACK);
-  int color = 0xF800;
+  tft.background(0);
+  color color = newColor(255, 0, 0);
   int t;
-  int w = 63;
-  int x = 159;
+  int w = 79;
+  int x = 127;
   int y = 0;
-  int z = 127;
-  for(t = 0 ; t <= 15; t+=1) {
-    tft.drawTriangle(w, y, y, x, z, x, color);
-    x-=4;
-    y+=4;
-    z-=4;
+  int z = 159;
+  for(t = 0 ; t <= 9; t+=1) {
+    tft.stroke(color);
+    tft.triangle(w, y, y, x, z, x);
+    x-=5;
+    y+=5;
+    z-=5;
     color+=100;
   }
 }
