@@ -79,7 +79,7 @@ void setup(void) {
   delay(500);
 
   // optimized lines
-  testfastlines(ST7735_RED, ST7735_BLUE);
+  testfastlines(newColor(255, 0, 0), newColor(0, 0, 255));
   delay(500);
 
   testdrawrects(ST7735_GREEN);
@@ -153,13 +153,15 @@ void testdrawtext(char *text, color color) {
   tft.textWrap(text, 0, 0);
 }
 
-void testfastlines(uint16_t color1, uint16_t color2) {
-  tft.fillScreen(ST7735_BLACK);
+void testfastlines(color color1, color color2) {
+  tft.background(0);
+  tft.stroke(color1);
   for (int16_t y=0; y < tft.height(); y+=5) {
-    tft.drawFastHLine(0, y, tft.width(), color1);
+    tft.line(0, y, tft.width(), y);
   }
+  tft.stroke(color2);
   for (int16_t x=0; x < tft.width(); x+=5) {
-    tft.drawFastVLine(x, 0, tft.height(), color2);
+    tft.line(x, 0, x, tft.height());
   }
 }
 

@@ -54,7 +54,15 @@ void Arduino_GLCD::point(int16_t x, int16_t y) {
 }
 
 void Arduino_GLCD::line(int16_t x1, int16_t y1, int16_t x2, int16_t y2) {
-  drawLine(x1, y1, x2, y2, strokeColor);
+  if (x1 == x2) {
+    drawFastVLine(x1, y1, y2 - y1, strokeColor);
+  }
+  else if (y1 == y2) {
+    drawFastHLine(x1, y1, x2 - x1, strokeColor);
+  }
+  else {
+    drawLine(x1, y1, x2, y2, strokeColor);
+  }
 }
 
 color newColor(uint8_t r, uint8_t g, uint8_t b) {
