@@ -53,7 +53,7 @@ void setup(void) {
   delay(500);
   
   // clear the screen with a cyan background (using the "color" type);
-  color c = newColor(0, 255, 255);
+  color c = tft.newColor(0, 255, 255);
   tft.background(c);
   delay(500);
 
@@ -62,7 +62,7 @@ void setup(void) {
 
   // large block of text
   tft.background(0, 64, 0);
-  testdrawtext("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing ante sed nibh tincidunt feugiat. Maecenas enim massa, fringilla sed malesuada et, malesuada sit amet turpis. Sed porttitor neque ut ante pretium vitae malesuada nunc bibendum. Nullam aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor imperdiet posuere. ", newColor(255, 255, 0));
+  testdrawtext("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing ante sed nibh tincidunt feugiat. Maecenas enim massa, fringilla sed malesuada et, malesuada sit amet turpis. Sed porttitor neque ut ante pretium vitae malesuada nunc bibendum. Nullam aliquet ultrices massa eu hendrerit. Ut sed nisi lorem. In vestibulum purus a tortor imperdiet posuere. ", tft.newColor(255, 255, 0));
   delay(1000);
 
   // tft print function!
@@ -75,22 +75,22 @@ void setup(void) {
   delay(500);
 
   // line draw test
-  testlines(newColor(255, 255, 0)); // yellow
+  testlines(tft.newColor(255, 255, 0)); // yellow
   delay(500);
 
   // optimized lines
-  testfastlines(newColor(255, 0, 0), newColor(0, 0, 255));
+  testfastlines(tft.newColor(255, 0, 0), tft.newColor(0, 0, 255));
   delay(500);
 
-  testdrawrects(newColor(0, 255, 0));
+  testdrawrects(tft.newColor(0, 255, 0));
   delay(500);
 
-  testfillrects(newColor(255, 255, 0), newColor(255, 0, 255));
+  testfillrects(tft.newColor(255, 255, 0), tft.newColor(255, 0, 255));
   delay(500);
 
   tft.background(0);
-  testfillcircles(10, newColor(0, 0, 255));
-  testdrawcircles(10, newColor(255, 255, 255));
+  testfillcircles(10, tft.newColor(0, 0, 255));
+  testdrawcircles(10, tft.newColor(255, 255, 255));
   delay(500);
 
   testroundrects();
@@ -204,7 +204,7 @@ void testdrawcircles(uint8_t radius, color color) {
 
 void testtriangles() {
   tft.background(0);
-  color color = newColor(255, 0, 0);
+  color color = tft.newColor(255, 0, 0);
   int t;
   int w = 79;
   int x = 127;
