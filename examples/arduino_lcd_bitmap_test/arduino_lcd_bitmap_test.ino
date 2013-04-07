@@ -31,6 +31,10 @@ void loop() {
   }
   else
     Esplora.writeRed(255);
+    
+  Serial.println("drawing images");
+  tft.background(0);
   tft.image(img, 0, 0);
+  tft.image(img, 32, 32);
   delay(30000);
 }
