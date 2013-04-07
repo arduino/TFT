@@ -8,8 +8,8 @@ PImage img;
 Arduino_GLCD tft = Arduino_GLCD(7, 0, 1); // Esplora pins
 
 void setup() {
-  img = loadImage("parrot.jpg");
-  image(img, 0, 0);
+  img = tft.loadImage("parrot.jpg");
+  tft.image(img, 0, 0);
 }
 
 void loop() {
