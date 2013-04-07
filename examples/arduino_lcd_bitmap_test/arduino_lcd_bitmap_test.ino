@@ -23,6 +23,7 @@ void setup() {
 }
 
 void loop() {
+  delay(5000);
   Esplora.writeRGB(0, 0, 0);
   img = tft.loadImage("parrot.bmp");
   if (img.isValid()) {
@@ -31,6 +32,5 @@ void loop() {
   else
     Esplora.writeRed(255);
   tft.image(img, 0, 0);
-  
-  delay(3000);
+  delay(30000);
 }
