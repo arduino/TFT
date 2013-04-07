@@ -19,6 +19,7 @@ void setup() {
     return;
   }
   Serial.println("OK!");
+  tft.begin();
 }
 
 void loop() {
