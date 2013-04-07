@@ -25,6 +25,7 @@
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Arduino_GLCD.h> // Hardware-specific library
 #include <SPI.h>
+#include <SD.h>
 
 // Option 1: use any pins but a little slower
 //Adafruit_ST7735 tft = Adafruit_ST7735(cs, dc, mosi, sclk, rst);
