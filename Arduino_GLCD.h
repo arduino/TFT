@@ -15,4 +15,8 @@ public:
   void begin();  
 };
 
+#if (USB_VID == 0x2341) && (USB_PID == 0x803C) // are we building for Esplora?
+extern Arduino_GLCD EsploraLCD;
+#endif
+
 #endif // _ARDUINO_GLCD_H

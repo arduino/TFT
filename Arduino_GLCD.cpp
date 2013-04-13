@@ -1,5 +1,9 @@
 #include "Arduino_GLCD.h"
 
+#if (USB_VID == 0x2341) && (USB_PID == 0x803C) // are we building for Esplora?
+Arduino_GLCD EsploraLCD(7, 0, 1);
+#endif
+
 Arduino_GLCD::Arduino_GLCD(uint8_t CS, uint8_t RS, uint8_t RST) 
   : Adafruit_ST7735(CS, RS, RST)
 {
