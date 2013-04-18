@@ -8,8 +8,9 @@
 PImage img;
 
 void setup() {
-  delay(3000);
   Serial.begin(9600);
+  while (!Serial) ;  // TODO do this for Leonardo-likes only
+  
   Serial.print("Initializing SD card...");
   if (!SD.begin(SD_CS)) {
     Serial.println("failed!");
