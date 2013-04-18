@@ -1,10 +1,8 @@
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <Arduino_GLCD.h> // Hardware-specific library
+#include <Esplora.h>
 #include <SPI.h>
 #include <SD.h>
-
-#include <Esplora.h>
-
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Arduino_GLCD.h> // Hardware-specific library
 #define SD_CS    8  // Chip select line for SD card
 
 PImage img;
