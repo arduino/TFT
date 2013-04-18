@@ -19,13 +19,13 @@ void setup() {
     return;
   }
   Serial.println("OK!");
-  tft.begin();
+  EsploraLCD.begin();
 }
 
 void loop() {
   delay(5000);
   Esplora.writeRGB(0, 0, 0);
-  img = tft.loadImage("parrot.bmp");
+  img = EsploraLCD.loadImage("parrot.bmp");
   if (img.isValid()) {
     Esplora.writeGreen(255);
   }
@@ -33,8 +33,8 @@ void loop() {
     Esplora.writeRed(255);
     
   Serial.println("drawing images");
-  tft.background(0);
-  tft.image(img, 0, 0);
-  tft.image(img, 32, 32);
+  EsploraLCD.background(0);
+  EsploraLCD.image(img, 0, 0);
+  EsploraLCD.image(img, 32, 32);
   delay(30000);
 }
