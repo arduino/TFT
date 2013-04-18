@@ -12,6 +12,7 @@ PImage img;
 Arduino_GLCD tft = Arduino_GLCD(7, 0, 1); // Esplora pins
 
 void setup() {
+  delay(3000);
   Serial.begin(9600);
   Serial.print("Initializing SD card...");
   if (!SD.begin(SD_CS)) {
