@@ -27,14 +27,6 @@ char tempPrintout[3];  // array to hold the temperature data
 
 void setup(void) {
 
-  // start serial communication
-  Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect
-  }
-
-  Serial.print("Initializing display!");
-
   // Put this line at the beginning of every sketch that uses the GLCD
   EsploraLCD.begin();
 

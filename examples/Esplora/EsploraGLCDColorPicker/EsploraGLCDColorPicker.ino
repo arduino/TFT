@@ -21,9 +21,7 @@
 
 void setup(void) {
   Serial.begin(9600);
-    while (!Serial) {
-    ; // wait for serial port to connect
-  }
+  
   Serial.print("Initializing display!");
 
   // initialize the LCD
