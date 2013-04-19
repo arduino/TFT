@@ -34,9 +34,6 @@ int ballX, ballY, oldBallX, oldBallY;
 void setup() {
 
   Serial.begin(9600);
-  while(!Serial){
-    ; // wait for serial to start 
-  }
 
   // initialize the display
   EsploraLCD.begin();
