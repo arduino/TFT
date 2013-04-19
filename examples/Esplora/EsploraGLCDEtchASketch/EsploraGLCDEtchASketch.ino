@@ -62,7 +62,7 @@ void loop()
     (xPos = 0);
   }
   if(yPos > 127){
-    (xyPos = 127);
+    (yPos = 127);
   }
 
   if(yPos < 0){
