@@ -89,7 +89,6 @@ void moveBall() {
 
   // check if the ball and the paddle occupy the same space on screen
   if (inPaddle(ballX, ballY, paddleX, paddleY, 20, 5)) {
-    ballDirectionX = -ballDirectionX;
     ballDirectionY = -ballDirectionY;
   }
 
