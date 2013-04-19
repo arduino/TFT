@@ -40,7 +40,7 @@ void loop(){
 
   // draw the line in a pretty color
   EsploraLCD.stroke(250,180,10);
-  EsploraLCD.line(xPos, EsploraLCD.height(), xPos, EsploraLCD.height() - graphHeight);
+  EsploraLCD.line(xPos, EsploraLCD.height() - graphHeight, xPos, EsploraLCD.height());
 
   // if the graph reaches the edge of the screen
   // erase it and start over from the other side
