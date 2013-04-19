@@ -47,8 +47,8 @@ void loop() {
   int myHeight = EsploraLCD.height();
 
   // map the paddle's location to the joystick's position 
-  paddleX = map(Esplora.readJoystickY(), 512, -512, 0, myWidth) - 20/2; 
-  paddleY = map(Esplora.readJoystickX(), 512, -512, 0, myHeight) - 5/2; 
+  paddleX = map(Esplora.readJoystickX(), 512, -512, 0, myWidth) - 20/2; 
+  paddleY = map(Esplora.readJoystickY(), -512, 512, 0, myHeight) - 5/2; 
   Serial.print(paddleX);
   Serial.print(" ");
   Serial.println(paddleY);
