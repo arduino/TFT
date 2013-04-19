@@ -3,9 +3,17 @@
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Arduino_GLCD.h> // Hardware-specific library
-#define SD_CS    8  // Chip select line for SD card
 
-PImage img;
+#define SD_CS    8  // Chip select line for SD card in Esplora
+
+PImage logo;
+
+/*
+ * To run this sketch:
+ * - open the sketch folder (Ctrl-K)
+ * - copy the "arduino.bmp" file to an SD
+ * - put the SD into the SD slot of the Arduino LCD module.
+ */
 
 void setup() {
   Serial.begin(9600);
@@ -18,21 +26,26 @@ void setup() {
   }
   Serial.println("OK!");
   EsploraLCD.begin();
-}
+  EsploraLCD.background(0);
 
-void loop() {
-  delay(5000);
   Esplora.writeRGB(0, 0, 0);
-  img = EsploraLCD.loadImage("parrot.bmp");
-  if (img.isValid()) {
+  logo = EsploraLCD.loadImage("arduino.bmp");
+  if (logo.isValid()) {
     Esplora.writeGreen(255);
   }
   else
     Esplora.writeRed(255);
-    
-  Serial.println("drawing images");
-  EsploraLCD.background(0);
-  EsploraLCD.image(img, 0, 0);
-  EsploraLCD.image(img, 32, 32);
-  delay(30000);
+
+}
+
+void loop() {
+  if (logo.isValid() == false) {
+    return;
+  }
+  
+  Serial.println("drawing image");
+  int x = random(EsploraLCD.width() - logo.width());
+  int y = random(EsploraLCD.height() - logo.height());
+  EsploraLCD.image(logo, x, y);
+  delay(1500);
 }
