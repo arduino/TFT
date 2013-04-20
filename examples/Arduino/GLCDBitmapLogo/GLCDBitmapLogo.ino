@@ -27,11 +27,24 @@ PImage logo;
  */
 
 void setup() {
+  EsploraLCD.begin();
+  EsploraLCD.background(255, 255, 255);
+
+  EsploraLCD.stroke(0, 0, 255);
+  EsploraLCD.println();
+  EsploraLCD.println("Esplora LCD Bitmap Example");
+  EsploraLCD.stroke(0, 0, 0);
+  EsploraLCD.println("Open serial monitor");
+  EsploraLCD.println("to run the sketch");
+
   Serial.begin(9600);
   while (!Serial) {
     // wait for serial line to be ready
   }
-  
+
+  EsploraLCD.background(255, 255, 255);
+
+
   Serial.print("Initializing SD card...");
   if (!SD.begin(sd_cs)) {
     Serial.println("failed!");
