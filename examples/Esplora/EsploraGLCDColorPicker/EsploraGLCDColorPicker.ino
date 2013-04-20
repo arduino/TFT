@@ -21,8 +21,6 @@
 
 void setup(void) {
   Serial.begin(9600);
-  
-  Serial.print("Initializing display!");
 
   // initialize the LCD
   EsploraLCD.begin();
