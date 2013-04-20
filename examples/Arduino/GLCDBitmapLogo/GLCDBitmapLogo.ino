@@ -32,7 +32,7 @@ void setup() {
 
   EsploraLCD.stroke(0, 0, 255);
   EsploraLCD.println();
-  EsploraLCD.println("Esplora LCD Bitmap Example");
+  EsploraLCD.println("Arduino LCD Bitmap Example");
   EsploraLCD.stroke(0, 0, 0);
   EsploraLCD.println("Open serial monitor");
   EsploraLCD.println("to run the sketch");
