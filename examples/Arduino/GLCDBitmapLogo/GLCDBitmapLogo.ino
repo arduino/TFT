@@ -29,6 +29,7 @@ PImage logo;
 void setup() {
   Serial.begin(9600);
   while (!Serial) {
+    // wait for serial line to be ready
   }
   
   Serial.print("Initializing SD card...");
