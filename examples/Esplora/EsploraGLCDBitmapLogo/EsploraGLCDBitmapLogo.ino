@@ -26,8 +26,7 @@ void setup() {
   }
   Serial.println("OK!");
   EsploraLCD.begin();
-  EsploraLCD.background(0);
-
+  EsploraLCD.background(255, 255, 255);
   Esplora.writeRGB(0, 0, 0);
   logo = EsploraLCD.loadImage("arduino.bmp");
   if (logo.isValid()) {

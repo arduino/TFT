@@ -38,7 +38,7 @@ void setup() {
   }
   Serial.println("OK!");
   LCDscreen.begin();
-  LCDscreen.background(0);
+  LCDscreen.background(255, 255, 255);
 
   logo = LCDscreen.loadImage("arduino.bmp");
   if (!logo.isValid()) {
