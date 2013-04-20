@@ -22,6 +22,7 @@ void setup() {
   Serial.print("Initializing SD card...");
   if (!SD.begin(SD_CS)) {
     Serial.println("failed!");
+    Esplora.writeRed(255);
     return;
   }
   Serial.println("OK!");
