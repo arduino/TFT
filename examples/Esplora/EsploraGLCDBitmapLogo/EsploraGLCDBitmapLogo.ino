@@ -1,25 +1,54 @@
+/*
+
+ Esplora GLCD Bitmap Logos
+ 
+ This example for the Arduino LCD screen is for use
+ with an Arduino Esplora.
+ 
+ This example reads an image file from a micro-SD card
+ and draws it on the screen, at random locations.
+ 
+ This example code is in the public domain.
+ 
+ Created 19 April 2013 by Enrico Gueli
+ 
+ http://arduino.cc/en/Tutorial/EsploraGLCDBitmapLogo
+ 
+ */
+
+/*
+ In this sketch, the Arduino logo is read from a micro-SD card,
+ so you need one and put 
+ - open the sketch folder (Ctrl-K or Cmd-K)
+ - copy the "arduino.bmp" file to a micro-SD
+ - put the SD into the SD slot of the Arduino LCD module.
+ */
+
+
+ 
+// include the necessary libraries
 #include <Esplora.h>
 #include <SPI.h>
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Arduino_GLCD.h> // Hardware-specific library
 
-#define SD_CS    8  // Chip select line for SD card in Esplora
+// the Esplora pin connected to the chip select line for SD card
+#define SD_CS    8
 
+// this variable represents the image to be drawn on screen
 PImage logo;
 
-/*
- * To run this sketch:
- * - open the sketch folder (Ctrl-K)
- * - copy the "arduino.bmp" file to an SD
- * - put the SD into the SD slot of the Arduino LCD module.
- */
-
 void setup() {
+  // initialize the serial port: it will be used to 
+  // print some diagnostic info
   Serial.begin(9600);
   while (!Serial) {
-    // wait for serial line to be ready
+    // wait for serial monitor to be open
   }
+  
+  // try to access the SD card. If that fails (e.g.
+  // no card present), the Esplora's LED will turn red.
   Serial.print("Initializing SD card...");
   if (!SD.begin(SD_CS)) {
     Serial.println("failed!");
@@ -27,8 +56,14 @@ void setup() {
     return;
   }
   Serial.println("OK!");
+  
+  // initialize and clear the GLCD screen
   EsploraLCD.begin();
   EsploraLCD.background(255, 255, 255);
+  
+  // now that the SD card can be access, try to load the
+  // image file. The Esplora LED will turn green or red if
+  // the loading went OK or not.
   Esplora.writeRGB(0, 0, 0);
   logo = EsploraLCD.loadImage("arduino.bmp");
   if (logo.isValid()) {
@@ -40,13 +75,22 @@ void setup() {
 }
 
 void loop() {
+  // don't do anything if the image wasn't loaded correctly.
   if (logo.isValid() == false) {
     return;
   }
   
   Serial.println("drawing image");
+  
+  // get a random location where to draw the image.
+  // To avoid the image to be draw outside the screen,
+  // take into account the image size.
   int x = random(EsploraLCD.width() - logo.width());
   int y = random(EsploraLCD.height() - logo.height());
+  
+  // draw the image to the screen
   EsploraLCD.image(logo, x, y);
+  
+  // wait a little bit before drawing again
   delay(1500);
 }
