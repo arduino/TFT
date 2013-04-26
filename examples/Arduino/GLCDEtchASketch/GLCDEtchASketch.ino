@@ -32,8 +32,8 @@
 Arduino_GLCD LCDscreen = Arduino_GLCD(cs, dc, rst);
 
 // initial position of the cursor
-int xPos = EsploraLCD.width()/2;
-int yPos = EsploraLCD.height()/2;
+int xPos = LCDscreen.width()/2;
+int yPos = LCDscreen.height()/2;
 
 // pin the erase switch is connected to
 int erasePin = 2;
