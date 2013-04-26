@@ -24,10 +24,10 @@
 // #define rst  1 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Arduino_GLCD.h> // Hardware-specific library
+#include <GLCD.h> // Hardware-specific library
 #include <SPI.h>
 
-Arduino_GLCD LCDscreen = Arduino_GLCD(cs, dc, rst);
+GLCD LCDscreen = GLCD(cs, dc, rst);
 
 // initial position of the circle
 int xPos = LCDscreen.width()/2;

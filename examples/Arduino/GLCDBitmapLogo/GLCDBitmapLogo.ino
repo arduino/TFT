@@ -26,7 +26,7 @@
 #include <SPI.h>
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Arduino_GLCD.h> // Hardware-specific library
+#include <GLCD.h> // Hardware-specific library
 
 // pin definition for the Uno
 #define sd_cs  11
@@ -40,7 +40,7 @@
 //#define dc     0
 //#define rst    1  
 
-Arduino_GLCD LCDscreen = Arduino_GLCD(lcd_cs, dc, rst);
+GLCD LCDscreen = GLCD(lcd_cs, dc, rst);
 
 // this variable represents the image to be drawn on screen
 PImage logo;

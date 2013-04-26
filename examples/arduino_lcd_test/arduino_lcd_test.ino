@@ -23,7 +23,7 @@
 #define rst  1  // you can also connect this to the Arduino reset
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Arduino_GLCD.h> // Hardware-specific library
+#include <GLCD.h> // Hardware-specific library
 #include <SPI.h>
 
 // Option 1: use any pins but a little slower
@@ -33,7 +33,7 @@
 // (for UNO thats sclk = 13 and sid = 11) and pin 10 must be
 // an output. This is much faster - also required if you want
 // to use the microSD card (see the image drawing example)
-Arduino_GLCD tft = Arduino_GLCD(cs, dc, rst);
+GLCD tft = GLCD(cs, dc, rst);
 float p = 3.1415926;
 
 void setup(void) {

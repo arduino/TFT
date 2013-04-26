@@ -20,7 +20,7 @@
 // include the necessary libraries
 #include <Esplora.h>  
 #include <Adafruit_GFX.h>
-#include <Arduino_GLCD.h>
+#include <GLCD.h>
 #include <SPI.h>
 
 char tempPrintout[3];  // array to hold the temperature data

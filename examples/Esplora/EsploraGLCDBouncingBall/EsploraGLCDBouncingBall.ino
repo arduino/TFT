@@ -19,7 +19,7 @@
 // include the necessary libraries
 #include <Esplora.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Arduino_GLCD.h> // Hardware-specific library
+#include <GLCD.h> // Hardware-specific library
 #include <SPI.h>
 
 // initial position of the circle

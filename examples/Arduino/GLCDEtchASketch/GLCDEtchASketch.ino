@@ -16,7 +16,7 @@
  */
  
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Arduino_GLCD.h> // Hardware-specific library
+#include <GLCD.h> // Hardware-specific library
 #include <SPI.h>
 
 // pin definition for the Uno
@@ -29,7 +29,7 @@
 // #define dc   0
 // #define rst  1 
 
-Arduino_GLCD LCDscreen = Arduino_GLCD(cs, dc, rst);
+GLCD LCDscreen = GLCD(cs, dc, rst);
 
 // initial position of the cursor
 int xPos = EsploraLCD.width()/2;

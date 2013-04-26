@@ -26,11 +26,11 @@
 // #define rst  1 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <Arduino_GLCD.h> // Hardware-specific library
+#include <GLCD.h> // Hardware-specific library
 #include <SPI.h>
 
 // create an instance of the library
-Arduino_GLCD LCDscreen = Arduino_GLCD(cs, dc, rst);
+GLCD LCDscreen = GLCD(cs, dc, rst);
 
 // char array to print to the screen
 char sensorPrintout[4];
