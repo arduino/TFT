@@ -72,13 +72,13 @@ void loop(){
     // erase the previous circle
     LCDscreen.stroke(0,0,0);
     LCDscreen.fill(0,0,0);
-    LCDscreen.rect(xOldPos, yOldPos, 10, 10);
+    LCDscreen.circle(xOldPos, yOldPos, 5);
   }
 
   // draw the circle in it's current position  
   LCDscreen.stroke(255,255,255);
   LCDscreen.fill(250,200,10);
-  LCDscreen.rect(xPos, yPos, 10,10);
+  LCDscreen.circle(xPos, yPos, 5);
 
   // save the current position for the next loop 
   xOldPos = xPos;
