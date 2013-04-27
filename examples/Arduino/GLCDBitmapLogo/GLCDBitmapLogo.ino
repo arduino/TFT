@@ -47,6 +47,18 @@ PImage logo;
 
 
 void setup() {
+  // initialize the GLCD and show a message
+  // asking the user to open the serial line
+  LCDscreen.begin();
+  LCDscreen.background(255, 255, 255);
+
+  LCDscreen.stroke(0, 0, 255);
+  LCDscreen.println();
+  LCDscreen.println("Arduino LCD Bitmap Example");
+  LCDscreen.stroke(0, 0, 0);
+  LCDscreen.println("Open serial monitor");
+  LCDscreen.println("to run the sketch");
+
   // initialize the serial port: it will be used to 
   // print some diagnostic info  
   Serial.begin(9600);
@@ -54,6 +66,9 @@ void setup() {
     // wait for serial line to be ready
   }
 
+  // clear the GLCD screen before starting
+  LCDscreen.background(255, 255, 255);
+  
   // try to access the SD card. If that fails (e.g.
   // no card present), the setup process will stop.
   Serial.print("Initializing SD card...");
