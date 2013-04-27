@@ -40,6 +40,18 @@
 PImage logo;
 
 void setup() {
+  // initialize the GLCD and show a message
+  // asking the user to open the serial line
+  EsploraLCD.begin();
+  EsploraLCD.background(255, 255, 255);
+
+  EsploraLCD.stroke(0, 0, 255);
+  EsploraLCD.println();
+  EsploraLCD.println("Arduino LCD Bitmap Example");
+  EsploraLCD.stroke(0, 0, 0);
+  EsploraLCD.println("Open serial monitor");
+  EsploraLCD.println("to run the sketch");
+
   // initialize the serial port: it will be used to 
   // print some diagnostic info
   Serial.begin(9600);
@@ -57,8 +69,7 @@ void setup() {
   }
   Serial.println("OK!");
   
-  // initialize and clear the GLCD screen
-  EsploraLCD.begin();
+  // clear the GLCD screen before starting
   EsploraLCD.background(255, 255, 255);
   
   // now that the SD card can be access, try to load the
