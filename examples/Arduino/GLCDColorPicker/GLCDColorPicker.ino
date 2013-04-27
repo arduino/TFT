@@ -31,10 +31,8 @@
 GLCD LCDscreen = GLCD(cs, dc, rst);
 
 void setup(void) {
+  // initialize the serial port
   Serial.begin(9600);
-  while(!Serial){
-    ; // wait for serial to initialize on Leonardo
-  }
 
   Serial.print("Initializing display!");
 

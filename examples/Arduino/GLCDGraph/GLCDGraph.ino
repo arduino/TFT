@@ -34,10 +34,8 @@ GLCD LCDscreen = GLCD(cs, dc, rst);
 int xPos = 0;
 
 void setup(){
+  // initialize the serial port
   Serial.begin(9600);
-  while(!Serial){
-    ; // wait for serial to start
-  }
 
   // initialize the display
   LCDscreen.begin();
