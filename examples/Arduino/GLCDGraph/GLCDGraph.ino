@@ -13,6 +13,10 @@
  http://arduino.cc/en/Tutorial/GLCDGraph
  
  */
+
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <GLCD.h> // Hardware-specific library
+#include <SPI.h>
  
  // pin definition for the Uno
 #define cs   10
@@ -24,10 +28,6 @@
 // #define dc   0
 // #define rst  1 
 
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
-#include <SPI.h>
-
 GLCD LCDscreen = GLCD(cs, dc, rst);
 
 // position of the line on screen
@@ -35,9 +35,6 @@ int xPos = 0;
 
 void setup(){
   Serial.begin(9600);
-  while(!Serial){
-    ; // wait for serial to start
-  }
 
   // initialize the display
   LCDscreen.begin();

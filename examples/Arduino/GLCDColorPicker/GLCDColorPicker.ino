@@ -3,8 +3,8 @@
  GLCD Color Picker
  
  This example for the Arduino GLCD reads the input of 
- potentiometers or analog sensors attached to A0, A1 and A2
- and uses the values to change the screen's color.
+ potentiometers or analog sensors attached to A0, A1,
+ and A2 and uses the values to change the screen's color.
  
  This example code is in the public domain.
  
@@ -30,13 +30,9 @@
 
 GLCD LCDscreen = GLCD(cs, dc, rst);
 
-void setup(void) {
+void setup() {
+  // begin serial communication
   Serial.begin(9600);
-  while(!Serial){
-    ; // wait for serial to initialize on Leonardo
-  }
-
-  Serial.print("Initializing display!");
 
   // initialize the display
   LCDscreen.begin();
@@ -48,7 +44,7 @@ void setup(void) {
 
 void loop() {
 
-  // read the values frm your sensors and scale them to 0-255
+  // read the values from your sensors and scale them to 0-255
   int redVal = map(analogRead(A0), 0, 1023, 0, 255); 
   int greenVal = map(analogRead(A1), 0, 1023, 0, 255); 
   int blueVal = map(analogRead(A2), 0, 1023, 0, 255);

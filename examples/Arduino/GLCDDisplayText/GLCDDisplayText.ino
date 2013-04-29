@@ -2,9 +2,9 @@
   Arduino Graphic LCD text example
   
   This example demonstrates how to draw text on the 
-  screen when connected to an Arduino. The Arduino reads
-  the value of an analog sensor attached to pin A0, and
-  writes the value to the LCD screen, updating every
+  GLCD with an Arduino. The Arduino reads the value 
+  of an analog sensor attached to pin A0, and writes 
+  the value to the LCD screen, updating every
   quarter second.
   
   This example code is in the public domain
@@ -14,6 +14,10 @@
   http://arduino.cc/en/Tutorial/GLCDDisplayText
  
  */
+
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <GLCD.h> // Hardware-specific library
+#include <SPI.h>
 
 // pin definition for the Uno
 #define cs   10
@@ -25,21 +29,14 @@
 // #define dc   0
 // #define rst  1 
 
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
-#include <SPI.h>
-
 // create an instance of the library
 GLCD LCDscreen = GLCD(cs, dc, rst);
 
 // char array to print to the screen
 char sensorPrintout[4];
 
-void setup(void) {
-  Serial.begin(9600);
-
-  Serial.print("Initializing display!");
-
+void setup() {
+  
   // Put this line at the beginning of every sketch that uses the GLCD:
   LCDscreen.begin();
 

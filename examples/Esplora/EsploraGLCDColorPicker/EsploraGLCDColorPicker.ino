@@ -3,7 +3,7 @@
  Esplora GLCD Color Picker
  
  This example for the Esplora with an Arduino GLCD reads 
- the input of  the joystick and slider, using the values
+ the input of the joystick and slider, using the values
  to change the screen's color.
  
  This example code is in the public domain.
@@ -19,7 +19,7 @@
 #include <GLCD.h> // Hardware-specific library
 #include <SPI.h>
 
-void setup(void) {
+void setup() {
   Serial.begin(9600);
 
   // initialize the LCD

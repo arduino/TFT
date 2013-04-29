@@ -8,6 +8,11 @@
  This example reads an image file from a micro-SD card
  and draws it on the screen, at random locations.
  
+ There is a .bmp file included with this sketch. 
+ - open the sketch folder (Ctrl-K or Cmd-K)
+ - copy the "arduino.bmp" file to a micro-SD
+ - put the SD into the SD slot of the Arduino LCD module.
+ 
  This example code is in the public domain.
  
  Created 19 April 2013 by Enrico Gueli
@@ -15,16 +20,6 @@
  http://arduino.cc/en/Tutorial/EsploraGLCDBitmapLogo
  
  */
-
-/*
- In this sketch, the Arduino logo is read from a micro-SD card,
- so you need one and put 
- - open the sketch folder (Ctrl-K or Cmd-K)
- - copy the "arduino.bmp" file to a micro-SD
- - put the SD into the SD slot of the Arduino LCD module.
- */
-
-
  
 // include the necessary libraries
 #include <Esplora.h>
