@@ -6,8 +6,8 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-Adafruit_ST7735  KEYWORD1
-GLCD  KEYWORD1
+Adafruit_ST7735	KEYWORD1
+GLCD	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -18,4 +18,4 @@ GLCD  KEYWORD1
 # Constants (LITERAL1)
 #######################################
 
-EsploraLCD  LITERAL1
+EsploraLCD	LITERAL1
