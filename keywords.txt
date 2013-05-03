@@ -7,7 +7,7 @@
 #######################################
 
 Adafruit_ST7735	KEYWORD1
-GLCD	KEYWORD1
+GTFT	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
