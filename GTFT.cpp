@@ -1,10 +1,10 @@
-#include "GLCD.h"
+#include "GTFT.h"
 
 #if (USB_VID == 0x2341) && (USB_PID == 0x803C) // are we building for Esplora?
-GLCD EsploraLCD(7, 0, 1);
+GTFT EsploraLCD(7, 0, 1);
 #endif
 
-GLCD::GLCD(uint8_t CS, uint8_t RS, uint8_t RST) 
+GTFT::GTFT(uint8_t CS, uint8_t RS, uint8_t RST) 
   : Adafruit_ST7735(CS, RS, RST)
 {
   // as we already know the orientation (landscape, therefore rotated),
@@ -13,7 +13,7 @@ GLCD::GLCD(uint8_t CS, uint8_t RS, uint8_t RST)
   _height = ST7735_TFTWIDTH;
 }
 
-void GLCD::begin() {
+void GTFT::begin() {
   initR(INITR_REDTAB);
   setRotation(1);
 }
