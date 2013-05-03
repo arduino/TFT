@@ -15,7 +15,7 @@
  */
  
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 #include <SPI.h>
 
 // pin definition for the Uno
@@ -28,11 +28,11 @@
 // #define dc   0
 // #define rst  1 
 
-GLCD LCDscreen = GLCD(cs, dc, rst);
+GTFT TFTscreen = GTFT(cs, dc, rst);
 
 // initial position of the cursor
-int xPos = LCDscreen.width()/2;
-int yPos = LCDscreen.height()/2;
+int xPos = TFTscreen.width()/2;
+int yPos = TFTscreen.height()/2;
 
 // pin the erase switch is connected to
 int erasePin = 2;
@@ -41,9 +41,9 @@ void setup() {
   // declare inputs
   pinMode(erasePin, INPUT);
   // initialize the screen
-  LCDscreen.begin();
+  TFTscreen.begin();
   // make the background black
-  LCDscreen.background(0,0,0); 
+  TFTscreen.background(0,0,0); 
 }
 
 void loop()
@@ -73,12 +73,12 @@ void loop()
   }
   
   // draw the point
-  LCDscreen.stroke(255,255,255);
-  LCDscreen.point(xPos,yPos);
+  TFTscreen.stroke(255,255,255);
+  TFTscreen.point(xPos,yPos);
 
   // read the value of the pin, and erase the screen if pressed
   if(digitalRead(erasePin) == HIGH){
-    LCDscreen.background(0,0,0);
+    TFTscreen.background(0,0,0);
   }
 
   delay(33);            

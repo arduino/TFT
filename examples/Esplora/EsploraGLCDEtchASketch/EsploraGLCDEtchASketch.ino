@@ -17,7 +17,7 @@
  
 #include <Esplora.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 #include <SPI.h>
 
 // initial position of the cursor

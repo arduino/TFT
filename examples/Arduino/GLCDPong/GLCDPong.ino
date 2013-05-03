@@ -17,7 +17,7 @@
  */
  
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 #include <SPI.h>
 
 // pin definition for the Uno
@@ -30,7 +30,7 @@
 // #define dc   0
 // #define rst  1 
 
-GLCD LCDscreen = GLCD(cs, dc, rst);
+GTFT TFTscreen = GTFT(cs, dc, rst);
 
 // variables for the position of the ball and paddle
 int paddleX = 0;
@@ -45,16 +45,16 @@ int ballX, ballY, oldBallX, oldBallY;
 
 void setup() {
   // initialize the display
-  LCDscreen.begin();
+  TFTscreen.begin();
   // black background
-  LCDscreen.background(0,0,0); 
+  TFTscreen.background(0,0,0); 
 }
 
 void loop() {
 
   // save the width and height of the screen
-  int myWidth = LCDscreen.width();
-  int myHeight = LCDscreen.height();
+  int myWidth = TFTscreen.width();
+  int myHeight = TFTscreen.height();
   
   // map the paddle's location to the position of the potentiometers   
   paddleX = map(analogRead(A0), 512, -512, 0, myWidth) - 20/2; 
@@ -62,17 +62,17 @@ void loop() {
   
   // set the fill color to black and erase the previous 
   // position of the paddle if different from present
-  LCDscreen.fill(0,0,0);
+  TFTscreen.fill(0,0,0);
 
  if (oldPaddleX != paddleX || oldPaddleY != paddleY) {
-    LCDscreen.rect(oldPaddleX, oldPaddleY, 20, 5);
+    TFTscreen.rect(oldPaddleX, oldPaddleY, 20, 5);
   }
 
   // draw the paddle on screen, save the current position
   // as the previous.
-  LCDscreen.fill(255,255,255);
+  TFTscreen.fill(255,255,255);
 
-  LCDscreen.rect(paddleX, paddleY, 20, 5);
+  TFTscreen.rect(paddleX, paddleY, 20, 5);
   oldPaddleX = paddleX;
   oldPaddleY = paddleY;
 
@@ -85,11 +85,11 @@ void loop() {
 // this function determines the ball's position on screen
 void moveBall() {
   // if the ball goes offscreen, reverse the direction:
- if (ballX > LCDscreen.width() || ballX < 0) {
+ if (ballX > TFTscreen.width() || ballX < 0) {
    ballDirectionX = -ballDirectionX;
  }
  
-  if (ballY > LCDscreen.height() || ballY < 0) {
+  if (ballY > TFTscreen.height() || ballY < 0) {
    ballDirectionY = -ballDirectionY;
  }  
  
@@ -104,16 +104,16 @@ void moveBall() {
  ballY += ballDirectionY;
  
 // erase the ball's previous position
- LCDscreen.fill(0,0,0);
+ TFTscreen.fill(0,0,0);
  
   if (oldBallX != ballX || oldBallY != ballY) {
-    LCDscreen.rect(oldBallX, oldBallY, 5, 5);
+    TFTscreen.rect(oldBallX, oldBallY, 5, 5);
   }
   
   
   // draw the ball's current position
-  LCDscreen.fill(255,255,255);
-  LCDscreen.rect(ballX, ballY, 5, 5);
+  TFTscreen.fill(255,255,255);
+  TFTscreen.rect(ballX, ballY, 5, 5);
  
   oldBallX = ballX;
   oldBallY = ballY;
