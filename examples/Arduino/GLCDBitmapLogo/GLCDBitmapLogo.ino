@@ -26,7 +26,7 @@
 #include <GLCD.h> // Hardware-specific library
 
 // pin definition for the Uno
-#define sd_cs  11
+#define sd_cs  4
 #define lcd_cs 10
 #define dc     9
 #define rst    8  
