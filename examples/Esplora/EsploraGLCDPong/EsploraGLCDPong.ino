@@ -6,7 +6,7 @@
  the value of the joystick to move a rectangular platform
  on the x and y axes. The platform can intersect with a ball
  causing it to bounce. The Esplora's slider adjusts the speed
- the ball moves
+ of the ball.
  
  This example code is in the public domain.
  

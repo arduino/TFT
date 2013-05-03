@@ -25,7 +25,7 @@
 
 char tempPrintout[3];  // array to hold the temperature data
 
-void setup(void) {
+void setup() {
 
   // Put this line at the beginning of every sketch that uses the GLCD
   EsploraLCD.begin();

@@ -13,6 +13,10 @@
  http://arduino.cc/en/Tutorial/GLCDGraph
  
  */
+
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <GLCD.h> // Hardware-specific library
+#include <SPI.h>
  
  // pin definition for the Uno
 #define cs   10
@@ -23,10 +27,6 @@
 // #define cs   7
 // #define dc   0
 // #define rst  1 
-
-#include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
-#include <SPI.h>
 
 GLCD LCDscreen = GLCD(cs, dc, rst);
 
