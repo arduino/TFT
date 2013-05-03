@@ -25,10 +25,10 @@
 // #define rst  1 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 #include <SPI.h>
 
-GLCD LCDscreen = GLCD(cs, dc, rst);
+GTFT TFTscreen = GTFT(cs, dc, rst);
 
 // position of the line on screen
 int xPos = 0;
@@ -38,29 +38,29 @@ void setup(){
   Serial.begin(9600);
 
   // initialize the display
-  LCDscreen.begin();
+  TFTscreen.begin();
 
   // clear the screen with a pretty color
-  LCDscreen.background(250,16,200); 
+  TFTscreen.background(250,16,200); 
 }
 
 void loop(){
   // read the sensor and map it to the screen height
   int sensor = analogRead(A0);
-  int drawHeight = map(sensor,0,1023,0,LCDscreen.height());
+  int drawHeight = map(sensor,0,1023,0,TFTscreen.height());
   
   // print out the height to the serial monitor
   Serial.println(drawHeight);
   
   // draw a line in a nice color
-  LCDscreen.stroke(250,180,10);
-  LCDscreen.line(xPos, LCDscreen.height()-drawHeight, xPos, LCDscreen.height());
+  TFTscreen.stroke(250,180,10);
+  TFTscreen.line(xPos, TFTscreen.height()-drawHeight, xPos, TFTscreen.height());
 
   // if the graph has reached the screen edge
   // erase the screen and start again
   if (xPos >= 160) {
     xPos = 0;
-    LCDscreen.background(250,16,200); 
+    TFTscreen.background(250,16,200); 
   } 
   else {
     // increment the horizontal position:

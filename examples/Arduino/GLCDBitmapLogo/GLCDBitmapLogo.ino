@@ -26,7 +26,7 @@
 #include <SPI.h>
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 
 // pin definition for the Uno
 #define sd_cs  11
@@ -40,7 +40,7 @@
 //#define dc     0
 //#define rst    1  
 
-GLCD LCDscreen = GLCD(lcd_cs, dc, rst);
+GTFT TFTscreen = GTFT(lcd_cs, dc, rst);
 
 // this variable represents the image to be drawn on screen
 PImage logo;
@@ -49,15 +49,15 @@ PImage logo;
 void setup() {
   // initialize the GLCD and show a message
   // asking the user to open the serial line
-  LCDscreen.begin();
-  LCDscreen.background(255, 255, 255);
+  TFTscreen.begin();
+  TFTscreen.background(255, 255, 255);
 
-  LCDscreen.stroke(0, 0, 255);
-  LCDscreen.println();
-  LCDscreen.println("Arduino LCD Bitmap Example");
-  LCDscreen.stroke(0, 0, 0);
-  LCDscreen.println("Open serial monitor");
-  LCDscreen.println("to run the sketch");
+  TFTscreen.stroke(0, 0, 255);
+  TFTscreen.println();
+  TFTscreen.println("Arduino TFT Bitmap Example");
+  TFTscreen.stroke(0, 0, 0);
+  TFTscreen.println("Open serial monitor");
+  TFTscreen.println("to run the sketch");
 
   // initialize the serial port: it will be used to 
   // print some diagnostic info  
@@ -67,7 +67,7 @@ void setup() {
   }
 
   // clear the GLCD screen before starting
-  LCDscreen.background(255, 255, 255);
+  TFTscreen.background(255, 255, 255);
   
   // try to access the SD card. If that fails (e.g.
   // no card present), the setup process will stop.
@@ -79,12 +79,12 @@ void setup() {
   Serial.println("OK!");
   
   // initialize and clear the GLCD screen
-  LCDscreen.begin();
-  LCDscreen.background(255, 255, 255);
+  TFTscreen.begin();
+  TFTscreen.background(255, 255, 255);
 
   // now that the SD card can be access, try to load the
   // image file.
-  logo = LCDscreen.loadImage("arduino.bmp");
+  logo = TFTscreen.loadImage("arduino.bmp");
   if (!logo.isValid()) {
     Serial.println("error while loading arduino.bmp");
   }
@@ -101,11 +101,11 @@ void loop() {
   // get a random location where to draw the image.
   // To avoid the image to be draw outside the screen,
   // take into account the image size.
-  int x = random(LCDscreen.width() - logo.width());
-  int y = random(LCDscreen.height() - logo.height());
+  int x = random(TFTscreen.width() - logo.width());
+  int y = random(TFTscreen.height() - logo.height());
 
   // draw the image to the screen
-  LCDscreen.image(logo, x, y);
+  TFTscreen.image(logo, x, y);
 
   // wait a little bit before drawing again
   delay(1500);

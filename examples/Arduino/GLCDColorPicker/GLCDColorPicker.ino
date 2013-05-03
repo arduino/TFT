@@ -25,10 +25,10 @@
 // #define rst  1 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 #include <SPI.h>
 
-GLCD LCDscreen = GLCD(cs, dc, rst);
+GTFT TFTscreen = GTFT(cs, dc, rst);
 
 void setup(void) {
   // initialize the serial port
@@ -37,10 +37,10 @@ void setup(void) {
   Serial.print("Initializing display!");
 
   // initialize the display
-  LCDscreen.begin();
+  TFTscreen.begin();
 
   // set the background to white
-  LCDscreen.background(255, 255, 255);
+  TFTscreen.background(255, 255, 255);
 
 }
 
@@ -52,7 +52,7 @@ void loop() {
   int blueVal = map(analogRead(A2), 0, 1023, 0, 255);
   
   // draw the background based on the mapped values
-  LCDscreen.background(redVal, greenVal, blueVal);
+  TFTscreen.background(redVal, greenVal, blueVal);
   
   // send the values to the serial monitor
   Serial.print("background(");

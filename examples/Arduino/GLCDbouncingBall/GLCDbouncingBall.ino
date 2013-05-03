@@ -24,14 +24,14 @@
 // #define rst  1 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 #include <SPI.h>
 
-GLCD LCDscreen = GLCD(cs, dc, rst);
+GTFT TFTscreen = GTFT(cs, dc, rst);
 
 // initial position of the circle
-int xPos = LCDscreen.width()/2;
-int yPos = LCDscreen.height()/2;
+int xPos = TFTscreen.width()/2;
+int yPos = TFTscreen.height()/2;
 
 // previous position of the circle
 int xOldPos;
@@ -44,21 +44,21 @@ int ySpeed = 1;
 void setup(){
   
   // initialize the screen
-  LCDscreen.begin();
+  TFTscreen.begin();
 
   // clear the screen with a black background
-  LCDscreen.background(0,0,0); 
+  TFTscreen.background(0,0,0); 
 }
 
 void loop(){
   // check if the circle's edge position is at the top or bottom
- if (xPos > LCDscreen.width()-10 || xPos < 0) {
+ if (xPos > TFTscreen.width()-10 || xPos < 0) {
    // change direction
    xSpeed = -xSpeed;
  }
  
    // check if the circle's edge is at the screen's left or right edge 
-  if (yPos > LCDscreen.height()-10 || yPos < 0) {
+  if (yPos > TFTscreen.height()-10 || yPos < 0) {
    // change direction
    ySpeed = -ySpeed;
  }  
@@ -70,15 +70,15 @@ void loop(){
   // if the current position is different than the previous position
   if (xOldPos != xPos || yOldPos != yPos) {
     // erase the previous circle
-    LCDscreen.stroke(0,0,0);
-    LCDscreen.fill(0,0,0);
-    LCDscreen.circle(xOldPos, yOldPos, 5);
+    TFTscreen.stroke(0,0,0);
+    TFTscreen.fill(0,0,0);
+    TFTscreen.circle(xOldPos, yOldPos, 5);
   }
 
   // draw the circle in it's current position  
-  LCDscreen.stroke(255,255,255);
-  LCDscreen.fill(250,200,10);
-  LCDscreen.circle(xPos, yPos, 5);
+  TFTscreen.stroke(255,255,255);
+  TFTscreen.fill(250,200,10);
+  TFTscreen.circle(xPos, yPos, 5);
 
   // save the current position for the next loop 
   xOldPos = xPos;

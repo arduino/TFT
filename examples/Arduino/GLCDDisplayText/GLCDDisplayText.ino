@@ -26,11 +26,11 @@
 // #define rst  1 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 #include <SPI.h>
 
 // create an instance of the library
-GLCD LCDscreen = GLCD(cs, dc, rst);
+GTFT TFTscreen = GTFT(cs, dc, rst);
 
 // char array to print to the screen
 char sensorPrintout[4];
@@ -41,20 +41,20 @@ void setup(void) {
   Serial.print("Initializing display!");
 
   // Put this line at the beginning of every sketch that uses the GLCD:
-  LCDscreen.begin();
+  TFTscreen.begin();
 
   // clear the screen with a black background
-  LCDscreen.background(0, 0, 0);
+  TFTscreen.background(0, 0, 0);
   
   // write the static text to the screen
   // set the font color to white
-  LCDscreen.stroke(255,255,255);
+  TFTscreen.stroke(255,255,255);
   // set the font size
-  LCDscreen.setTextSize(2);
+  TFTscreen.setTextSize(2);
   // write the text to the top left corner of the screen
-  LCDscreen.text("Sensor Value :\n ",0,0);
+  TFTscreen.text("Sensor Value :\n ",0,0);
   // ste the font size very large for the loop
-  LCDscreen.setTextSize(5);
+  TFTscreen.setTextSize(5);
 }
 
 void loop() {
@@ -66,13 +66,13 @@ void loop() {
   sensorVal.toCharArray(sensorPrintout, 4);
 
   // set the font color
-  LCDscreen.stroke(255,255,255);
+  TFTscreen.stroke(255,255,255);
   // print the sensor value
-  LCDscreen.text(sensorPrintout, 0, 20);
+  TFTscreen.text(sensorPrintout, 0, 20);
   // wait for a moment
   delay(250);
   // erase the text you just wrote
-  LCDscreen.stroke(0,0,0);
-  LCDscreen.text(sensorPrintout, 0, 20);
+  TFTscreen.stroke(0,0,0);
+  TFTscreen.text(sensorPrintout, 0, 20);
 }
 

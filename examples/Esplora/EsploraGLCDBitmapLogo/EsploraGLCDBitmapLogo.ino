@@ -31,7 +31,7 @@
 #include <SPI.h>
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GLCD.h> // Hardware-specific library
+#include <GTFT.h> // Hardware-specific library
 
 // the Esplora pin connected to the chip select line for SD card
 #define SD_CS    8
