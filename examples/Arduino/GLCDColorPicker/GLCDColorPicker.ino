@@ -25,7 +25,8 @@
 // #define rst  1 
 
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GTFT.h> // Hardware-specific library
+#include <Adafruit_ST7735.h> // Hardware-specific library
+#include <GTFT.h>            // Arduino LCD library
 #include <SPI.h>
 
 GTFT TFTscreen = GTFT(cs, dc, rst);

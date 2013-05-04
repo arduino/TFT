@@ -23,7 +23,8 @@
 #include <SPI.h>
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GTFT.h> // Hardware-specific library
+#include <Adafruit_ST7735.h> // Hardware-specific library
+#include <GTFT.h>            // Arduino LCD library
 
 // pin definition for the Uno
 #define sd_cs  4

@@ -26,7 +26,8 @@
 #include <SPI.h>
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
-#include <GTFT.h> // Hardware-specific library
+#include <Adafruit_ST7735.h> // Hardware-specific library
+#include <GTFT.h>            // Arduino LCD library
 
 // the Esplora pin connected to the chip select line for SD card
 #define SD_CS    8

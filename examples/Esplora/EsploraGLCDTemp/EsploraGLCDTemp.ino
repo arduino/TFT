@@ -19,8 +19,9 @@
 
 // include the necessary libraries
 #include <Esplora.h>  
-#include <Adafruit_GFX.h>
-#include <GTFT.h>
+#include <Adafruit_GFX.h>    // Core graphics library
+#include <Adafruit_ST7735.h> // Hardware-specific library
+#include <GTFT.h>            // Arduino LCD library
 #include <SPI.h>
 
 char tempPrintout[3];  // array to hold the temperature data
