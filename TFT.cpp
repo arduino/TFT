@@ -1,7 +1,7 @@
 #include "TFT.h"
 
 #if (USB_VID == 0x2341) && (USB_PID == 0x803C) // are we building for Esplora?
-TFT EsploraLCD(7, 0, 1);
+TFT EsploraTFT(7, 0, 1);
 #endif
 
 TFT::TFT(uint8_t CS, uint8_t RS, uint8_t RST) 

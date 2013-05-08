@@ -21,8 +21,8 @@
 #include <SPI.h>
 
 // horizontal start and end positions
-int yStart = EsploraLCD.height()/2;
-int yEnd = EsploraLCD.height()/2;
+int yStart = EsploraTFT.height()/2;
+int yEnd = EsploraTFT.height()/2;
 
 // previous start and end positions
 int oldEndY;
@@ -30,9 +30,9 @@ int oldStartY;
 
 void setup() {
   // initialize the display
-  EsploraLCD.begin();
+  EsploraTFT.begin();
   // make the background black
-  EsploraLCD.background(0,0,0); 
+  EsploraTFT.background(0,0,0); 
 }
 
 void loop()
@@ -43,19 +43,19 @@ void loop()
   // the values are 100 when tilted to the left
   // and  -100 when tilted to the right
   // map these values to the start and end points
-  yStart = map(tilt,-100,100,EsploraLCD.height(),0);
-  yEnd = map(tilt,-100,100,0,EsploraLCD.height());
+  yStart = map(tilt,-100,100,EsploraTFT.height(),0);
+  yEnd = map(tilt,-100,100,0,EsploraTFT.height());
 
   // if the previous values are different than the current values
   // erase the previous line
   if (oldStartY != yStart || oldEndY != yEnd) {
-    EsploraLCD.stroke(0,0,0);
-    EsploraLCD.line(0, oldStartY, EsploraLCD.width(), oldEndY);
+    EsploraTFT.stroke(0,0,0);
+    EsploraTFT.line(0, oldStartY, EsploraTFT.width(), oldEndY);
   }
 
   // draw the line in magenta
-  EsploraLCD.stroke(255,0,255);
-  EsploraLCD.line(0,yStart,EsploraLCD.width(),yEnd);
+  EsploraTFT.stroke(255,0,255);
+  EsploraTFT.line(0,yStart,EsploraTFT.width(),yEnd);
 
   // save the current start and end points
   // to compare int he next loop

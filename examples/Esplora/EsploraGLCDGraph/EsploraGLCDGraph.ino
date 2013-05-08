@@ -26,10 +26,10 @@ int xPos = 0;
 void setup(){
 
   // initialize the screen
-  EsploraLCD.begin();
+  EsploraTFT.begin();
 
   // clear the screen with a nice color
-  EsploraLCD.background(250,16,200); 
+  EsploraTFT.background(250,16,200); 
 }
 
 void loop(){
@@ -37,17 +37,17 @@ void loop(){
   // read the sensor value
   int sensor = Esplora.readLightSensor();
   // map the sensor value to the height of the screen
-  int graphHeight = map(sensor,0,1023,0,EsploraLCD.height());
+  int graphHeight = map(sensor,0,1023,0,EsploraTFT.height());
 
   // draw the line in a pretty color
-  EsploraLCD.stroke(250,180,10);
-  EsploraLCD.line(xPos, EsploraLCD.height() - graphHeight, xPos, EsploraLCD.height());
+  EsploraTFT.stroke(250,180,10);
+  EsploraTFT.line(xPos, EsploraTFT.height() - graphHeight, xPos, EsploraTFT.height());
 
   // if the graph reaches the edge of the screen
   // erase it and start over from the other side
   if (xPos >= 160) {
     xPos = 0;
-    EsploraLCD.background(250,16,200); 
+    EsploraTFT.background(250,16,200); 
   } 
   else {
     // increment the horizontal position:

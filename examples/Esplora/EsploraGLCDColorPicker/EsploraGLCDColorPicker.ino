@@ -24,10 +24,10 @@ void setup() {
   Serial.begin(9600);
 
   // initialize the LCD
-  EsploraLCD.begin();
+  EsploraTFT.begin();
 
   // start out with a white screen
-  EsploraLCD.background(255, 255, 255);
+  EsploraTFT.background(255, 255, 255);
 
 }
 
@@ -39,7 +39,7 @@ void loop() {
   int slider = map(Esplora.readSlider(), 0, 1023, 0, 255);   // read the slider's position
   
   // change the background color based on the mapped values
-  EsploraLCD.background(xValue, yValue, slider);
+  EsploraTFT.background(xValue, yValue, slider);
   
   // print the mapped values to the Serial monitor
   Serial.print("background(");

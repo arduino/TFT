@@ -38,15 +38,15 @@ PImage logo;
 void setup() {
   // initialize the GLCD and show a message
   // asking the user to open the serial line
-  EsploraLCD.begin();
-  EsploraLCD.background(255, 255, 255);
+  EsploraTFT.begin();
+  EsploraTFT.background(255, 255, 255);
 
-  EsploraLCD.stroke(0, 0, 255);
-  EsploraLCD.println();
-  EsploraLCD.println("Arduino LCD Bitmap Example");
-  EsploraLCD.stroke(0, 0, 0);
-  EsploraLCD.println("Open serial monitor");
-  EsploraLCD.println("to run the sketch");
+  EsploraTFT.stroke(0, 0, 255);
+  EsploraTFT.println();
+  EsploraTFT.println("Arduino LCD Bitmap Example");
+  EsploraTFT.stroke(0, 0, 0);
+  EsploraTFT.println("Open serial monitor");
+  EsploraTFT.println("to run the sketch");
 
   // initialize the serial port: it will be used to 
   // print some diagnostic info
@@ -66,13 +66,13 @@ void setup() {
   Serial.println("OK!");
   
   // clear the GLCD screen before starting
-  EsploraLCD.background(255, 255, 255);
+  EsploraTFT.background(255, 255, 255);
   
   // now that the SD card can be access, try to load the
   // image file. The Esplora LED will turn green or red if
   // the loading went OK or not.
   Esplora.writeRGB(0, 0, 0);
-  logo = EsploraLCD.loadImage("arduino.bmp");
+  logo = EsploraTFT.loadImage("arduino.bmp");
   if (logo.isValid()) {
     Esplora.writeGreen(255);
   }
@@ -92,11 +92,11 @@ void loop() {
   // get a random location where to draw the image.
   // To avoid the image to be draw outside the screen,
   // take into account the image size.
-  int x = random(EsploraLCD.width() - logo.width());
-  int y = random(EsploraLCD.height() - logo.height());
+  int x = random(EsploraTFT.width() - logo.width());
+  int y = random(EsploraTFT.height() - logo.height());
   
   // draw the image to the screen
-  EsploraLCD.image(logo, x, y);
+  EsploraTFT.image(logo, x, y);
   
   // wait a little bit before drawing again
   delay(1500);

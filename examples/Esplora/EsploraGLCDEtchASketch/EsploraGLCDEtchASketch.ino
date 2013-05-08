@@ -22,15 +22,15 @@
 #include <SPI.h>
 
 // initial position of the cursor
-int xPos = EsploraLCD.width()/2;
-int yPos = EsploraLCD.height()/2;
+int xPos = EsploraTFT.width()/2;
+int yPos = EsploraTFT.height()/2;
 
 void setup() {
   // initialize the display
-  EsploraLCD.begin();
+  EsploraTFT.begin();
   
   // clear the background
-  EsploraLCD.background(0,0,0); 
+  EsploraTFT.background(0,0,0); 
 }
 
 void loop()
@@ -71,13 +71,13 @@ void loop()
   }
   
   // draw the point
-  EsploraLCD.stroke(255,255,255);
-  EsploraLCD.point(xPos,yPos);
+  EsploraTFT.stroke(255,255,255);
+  EsploraTFT.point(xPos,yPos);
 
   // check the accelerometer values and clear
   // the screen if it is being shaken 
   if(abs(Esplora.readAccelerometer(X_AXIS))>200 || abs(Esplora.readAccelerometer(Y_AXIS))>200){
-    EsploraLCD.background(0,0,0);
+    EsploraTFT.background(0,0,0);
   }
   
   delay(33);            

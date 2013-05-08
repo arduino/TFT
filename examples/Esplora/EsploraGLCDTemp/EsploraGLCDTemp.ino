@@ -29,21 +29,21 @@ char tempPrintout[3];  // array to hold the temperature data
 void setup() {
 
   // Put this line at the beginning of every sketch that uses the GLCD
-  EsploraLCD.begin();
+  EsploraTFT.begin();
 
   // clear the screen with a black background
-  EsploraLCD.background(0,0,0);
+  EsploraTFT.background(0,0,0);
   
   // set the text color to magenta
-  EsploraLCD.stroke(200,20,180);
+  EsploraTFT.stroke(200,20,180);
   // set the text to size 2
-  EsploraLCD.setTextSize(2);
+  EsploraTFT.setTextSize(2);
   // start the text at the top left of the screen
   // this text is going to remain static
-  EsploraLCD.text("Degrees in C :\n ",0,0);
+  EsploraTFT.text("Degrees in C :\n ",0,0);
 
   // set the text in the loop to size 5
-  EsploraLCD.setTextSize(5);
+  EsploraTFT.setTextSize(5);
 }
 
 void loop() {
@@ -55,12 +55,12 @@ void loop() {
   temperature.toCharArray(tempPrintout, 3);
 
   // set the text color to white
-  EsploraLCD.stroke(255,255,255);
+  EsploraTFT.stroke(255,255,255);
   // print the temperature one line below the static text
-  EsploraLCD.text(tempPrintout, 0, 30);
+  EsploraTFT.text(tempPrintout, 0, 30);
   
   delay(1000);
   // erase the text for the next loop
-  EsploraLCD.stroke(0,0,0);
-  EsploraLCD.text(tempPrintout, 0, 30);
+  EsploraTFT.stroke(0,0,0);
+  EsploraTFT.text(tempPrintout, 0, 30);
 }

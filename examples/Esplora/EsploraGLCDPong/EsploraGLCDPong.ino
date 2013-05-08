@@ -37,15 +37,15 @@ void setup() {
   Serial.begin(9600);
 
   // initialize the display
-  EsploraLCD.begin();
+  EsploraTFT.begin();
   // set the background the black
-  EsploraLCD.background(0,0,0); 
+  EsploraTFT.background(0,0,0); 
 }
 
 void loop() {
   // save the width and height of the screen
-  int myWidth = EsploraLCD.width();
-  int myHeight = EsploraLCD.height();
+  int myWidth = EsploraTFT.width();
+  int myHeight = EsploraTFT.height();
 
   // map the paddle's location to the joystick's position 
   paddleX = map(Esplora.readJoystickX(), 512, -512, 0, myWidth) - 20/2; 
@@ -56,16 +56,16 @@ void loop() {
 
   // set the fill color to black and erase the previous 
   // position of the paddle if different from present
-  EsploraLCD.fill(0,0,0);
+  EsploraTFT.fill(0,0,0);
 
   if (oldPaddleX != paddleX || oldPaddleY != paddleY) {
-    EsploraLCD.rect(oldPaddleX, oldPaddleY, 20, 5);
+    EsploraTFT.rect(oldPaddleX, oldPaddleY, 20, 5);
   }
 
   // draw the paddle on screen, save the current position
   // as the previous.
-  EsploraLCD.fill(255,255,255);
-  EsploraLCD.rect(paddleX, paddleY, 20, 5);
+  EsploraTFT.fill(255,255,255);
+  EsploraTFT.rect(paddleX, paddleY, 20, 5);
   oldPaddleX = paddleX;
   oldPaddleY = paddleY;
 
@@ -80,11 +80,11 @@ void loop() {
 // this function determines the ball's position on screen
 void moveBall() {
   // if the ball goes offscreen, reverse the direction:
-  if (ballX > EsploraLCD.width() || ballX < 0) {
+  if (ballX > EsploraTFT.width() || ballX < 0) {
     ballDirectionX = -ballDirectionX;
   }
 
-  if (ballY > EsploraLCD.height() || ballY < 0) {
+  if (ballY > EsploraTFT.height() || ballY < 0) {
     ballDirectionY = -ballDirectionY;
   }  
 
@@ -98,16 +98,16 @@ void moveBall() {
   ballY += ballDirectionY;
 
   // erase the ball's previous position
-  EsploraLCD.fill(0,0,0);
+  EsploraTFT.fill(0,0,0);
 
   if (oldBallX != ballX || oldBallY != ballY) {
-    EsploraLCD.rect(oldBallX, oldBallY, 5, 5);
+    EsploraTFT.rect(oldBallX, oldBallY, 5, 5);
   }
 
   // draw the ball's current position
-  EsploraLCD.fill(255,255,255);
+  EsploraTFT.fill(255,255,255);
 
-  EsploraLCD.rect(ballX, ballY, 5, 5);
+  EsploraTFT.rect(ballX, ballY, 5, 5);
 
   oldBallX = ballX;
   oldBallY = ballY;
