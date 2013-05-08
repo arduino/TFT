@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-GTFT	KEYWORD1
+TFT	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -17,4 +17,4 @@ GTFT	KEYWORD1
 # Constants (LITERAL1)
 #######################################
 
-EsploraLCD	LITERAL1
+EsploraTFT	LITERAL1
