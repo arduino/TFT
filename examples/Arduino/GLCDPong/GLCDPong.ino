@@ -18,7 +18,7 @@
  
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library
-#include <GTFT.h>            // Arduino LCD library
+#include <TFT.h>            // Arduino LCD library
 #include <SPI.h>
 
 // pin definition for the Uno
@@ -31,7 +31,7 @@
 // #define dc   0
 // #define rst  1 
 
-GTFT TFTscreen = GTFT(cs, dc, rst);
+TFT TFTscreen = TFT(cs, dc, rst);
 
 // variables for the position of the ball and paddle
 int paddleX = 0;

@@ -24,7 +24,7 @@
 #include <SD.h>
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library
-#include <GTFT.h>            // Arduino LCD library
+#include <TFT.h>            // Arduino LCD library
 
 // pin definition for the Uno
 #define sd_cs  4
@@ -38,7 +38,7 @@
 //#define dc     0
 //#define rst    1  
 
-GTFT TFTscreen = GTFT(lcd_cs, dc, rst);
+TFT TFTscreen = TFT(lcd_cs, dc, rst);
 
 // this variable represents the image to be drawn on screen
 PImage logo;

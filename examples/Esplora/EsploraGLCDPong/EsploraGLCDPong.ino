@@ -20,7 +20,7 @@
 #include <Esplora.h>
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library
-#include <GTFT.h>            // Arduino LCD library
+#include <TFT.h>            // Arduino LCD library
 #include <SPI.h>
 
 // variables for the position of the ball and paddle
