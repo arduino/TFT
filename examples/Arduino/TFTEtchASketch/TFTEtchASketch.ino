@@ -1,8 +1,8 @@
 /*
 
- GLCD EtchASketch
+ TFT EtchASketch
  
- This example for the Arduino GLCD draws a white point
+ This example for the Arduino screen draws a white point
  on the GLCD based on the values of 2 potentiometers. 
  To clear the screen, press a button attached to pin 2.
  
@@ -10,7 +10,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/GLCDEtchASketch
+ http://arduino.cc/en/Tutorial/TFTEtchASketch
  
  */
  

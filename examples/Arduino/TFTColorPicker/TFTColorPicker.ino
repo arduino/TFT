@@ -1,8 +1,8 @@
 /*
 
- GLCD Color Picker
+ TFT Color Picker
  
- This example for the Arduino GLCD reads the input of 
+ This example for the Arduino screen reads the input of 
  potentiometers or analog sensors attached to A0, A1,
  and A2 and uses the values to change the screen's color.
  
@@ -10,7 +10,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/GLCDColorPicker
+ http://arduino.cc/en/Tutorial/TFTColorPicker
  
  */
  

@@ -1,8 +1,8 @@
 /*
 
- GLCD Pong
+ TFT Pong
  
- This example for the Arduino GLCD reads the values 
+ This example for the Arduino screen reads the values 
  of 2 potentiometers to move a rectangular platform
  on the x and y axes. The platform can intersect 
  with a ball causing it to bounce. 
@@ -12,7 +12,7 @@
  Created by Tom Igoe December 2012
  Modified 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/GLCDPong
+ http://arduino.cc/en/Tutorial/TFTPong
  
  */
  

@@ -1,8 +1,8 @@
 /*
 
- GLCD Graph
+ TFT Graph
  
- This example for an Arduino GLCD reads 
+ This example for an Arduino screen reads 
  the value of an analog sensor on A0, and 
  graphs the values on the screen.
  
@@ -10,7 +10,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/GLCDGraph
+ http://arduino.cc/en/Tutorial/TFTGraph
  
  */
 

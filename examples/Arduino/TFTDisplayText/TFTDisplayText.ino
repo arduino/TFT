@@ -1,8 +1,8 @@
 /*
-  Arduino Graphic LCD text example
+  Arduino TFT text example
   
   This example demonstrates how to draw text on the 
-  GLCD with an Arduino. The Arduino reads the value 
+  TFT with an Arduino. The Arduino reads the value 
   of an analog sensor attached to pin A0, and writes 
   the value to the LCD screen, updating every
   quarter second.
@@ -11,7 +11,7 @@
 
   Created 15 April 2013 by Scott Fitzgerald
  
-  http://arduino.cc/en/Tutorial/GLCDDisplayText
+  http://arduino.cc/en/Tutorial/TFTDisplayText
  
  */
 
