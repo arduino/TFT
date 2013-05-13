@@ -1,8 +1,8 @@
 /*
 
- Esplora GLCD Horizion
+ Esplora TFT Horizion
  
- This example for the Arduino GLCD and Esplora draws 
+ This example for the Arduino TFT and Esplora draws 
  a line on the screen that stays level with the ground
  as you tile the Esplora side to side
  
@@ -10,7 +10,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/EsploraGLCDHorizion
+ http://arduino.cc/en/Tutorial/EsploraTFTHorizion
  
  */
 

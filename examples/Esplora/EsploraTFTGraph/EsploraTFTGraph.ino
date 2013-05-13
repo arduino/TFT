@@ -1,8 +1,8 @@
 /*
 
- Esplora GLCD Graph
+ Esplora TFT Graph
  
- This example for the Esplora with an Arduino GLCD reads 
+ This example for the Esplora with an Arduino TFT reads 
  the value of the light sensor, and graphs the values on
  the screen.
  
@@ -10,7 +10,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/EsploraGLCDGraph
+ http://arduino.cc/en/Tutorial/EsploraTFTGraph
  
  */
 

@@ -1,8 +1,8 @@
 /*
 
- Esplora GLCD Color Picker
+ Esplora TFT Color Picker
  
- This example for the Esplora with an Arduino GLCD reads 
+ This example for the Esplora with an Arduino TFT reads 
  the input of the joystick and slider, using the values
  to change the screen's color.
  
@@ -10,7 +10,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/GLCDColorPicker
+ http://arduino.cc/en/Tutorial/TFTColorPicker
  
  */
 

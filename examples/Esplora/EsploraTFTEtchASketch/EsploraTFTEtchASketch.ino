@@ -1,8 +1,8 @@
 /*
 
- Esplora GLCD EtchASketch
+ Esplora TFT EtchASketch
  
- This example for the Arduino GLCD and Esplora draws 
+ This example for the Arduino TFT and Esplora draws 
  a white line on the screen, based on the position 
  of the joystick. To clear the screen, shake the 
  Esplora, using the values from the accelerometer.
@@ -11,7 +11,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/EsploraGLCDEtchASketch
+ http://arduino.cc/en/Tutorial/EsploraTFTEtchASketch
  
  */
  

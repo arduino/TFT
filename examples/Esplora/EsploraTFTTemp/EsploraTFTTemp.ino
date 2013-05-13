@@ -1,8 +1,8 @@
 /*
 
- Esplora GLCD Temperature Display
+ Esplora TFT Temperature Display
  
- This example for the Arduino LCD screen is for use
+ This example for the Arduino TFT screen is for use
  with an Arduino Esplora.
  
  This example reads the temperature of the Esplora's
@@ -13,7 +13,7 @@
  
  Created 15 April 2013 by Scott Fitzgerald
  
- http://arduino.cc/en/Tutorial/EsploraGLCDTemp
+ http://arduino.cc/en/Tutorial/EsploraTFTTemp
  
  */
 

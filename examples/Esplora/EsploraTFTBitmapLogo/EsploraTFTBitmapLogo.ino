@@ -1,8 +1,8 @@
 /*
 
- Esplora GLCD Bitmap Logos
+ Esplora TFT Bitmap Logos
  
- This example for the Arduino LCD screen is for use
+ This example for the Arduino TFT screen is for use
  with an Arduino Esplora.
  
  This example reads an image file from a micro-SD card
@@ -17,7 +17,7 @@
  
  Created 19 April 2013 by Enrico Gueli
  
- http://arduino.cc/en/Tutorial/EsploraGLCDBitmapLogo
+ http://arduino.cc/en/Tutorial/EsploraTFTBitmapLogo
  
  */
  
