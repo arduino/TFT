@@ -61,7 +61,7 @@ void loop() {
   String sensorVal = String(analogRead(A0));
  
   // convert the reading to a char array
-  sensorVal.toCharArray(sensorPrintout, 4);
+  sensorVal.toCharArray(sensorPrintout, 5);
 
   // set the font color
   TFTscreen.stroke(255,255,255);
